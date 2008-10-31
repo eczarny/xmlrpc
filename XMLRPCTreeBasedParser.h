@@ -32,6 +32,7 @@
 
 @interface XMLRPCTreeBasedParser : NSObject {
     NSXMLDocument *myXML;
+    NSDateFormatter *myDateFormatter;
     BOOL isFault;
 }
 

@@ -75,6 +75,9 @@
     if (self = [super init]) {
         NSError *error = nil;
         myXML = [[NSXMLDocument alloc] initWithData: data options: NSXMLDocumentTidyXML error: &error];
+        myDateFormatter = [[NSDateFormatter alloc] init];
+        
+        [myDateFormatter setDateFormat: @"yyyyMMdd'T'HH:mm:ss"];
         
         if (!myXML) {
             if (error) {
@@ -150,6 +153,7 @@
 
 - (void)dealloc {
     [myXML release];
+    [myDateFormatter release];
     
     [super dealloc];
 }
@@ -296,10 +300,7 @@
 }
 
 - (NSDate *)parseDate: (NSXMLElement *)element {
-    NSCalendarDate *date = [NSCalendarDate dateWithString: [element stringValue] 
-        calendarFormat: @"%Y%m%dT%H:%M:%S" locale: nil];
-    
-    return date;
+    return [myDateFormatter dateFromString: [element stringValue]];
 }
 
 - (NSData *)parseData: (NSXMLElement *)element {

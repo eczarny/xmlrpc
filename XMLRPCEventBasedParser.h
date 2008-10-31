@@ -48,6 +48,7 @@ typedef int XMLRPCEventBasedParserElementType;
 
 @interface XMLRPCEventBasedParser : NSObject {
     NSXMLParser *myParser;
+    NSDateFormatter *myDateFormatter;
     XMLRPCEventBasedParser *myParent;
     XMLRPCEventBasedParserElementType myElementType;
     NSString *myElementKey;

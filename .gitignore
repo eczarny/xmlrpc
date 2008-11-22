@@ -6,3 +6,5 @@
 *.jar
 classes/
 logs/
+.project
+.classpath

@@ -320,6 +320,8 @@
 
 - (void)parser: (NSXMLParser *)parser parseErrorOccurred: (NSError *)parseError {
     NSLog(@"The XML parser encountered an error parsing the response: %@", parseError);
+    
+    [parser abortParsing];
 }
 
 @end

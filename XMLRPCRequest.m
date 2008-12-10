@@ -78,7 +78,13 @@
 }
 
 - (void)setMethod: (NSString *)method withParameter: (id)parameter {
-    [myXMLEncoder setMethod: method withParameters: [NSArray arrayWithObject: parameter]];
+    NSArray *parameters = nil;
+    
+    if (parameter) {
+        parameters = [NSArray arrayWithObject: parameter];
+    }
+    
+    [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
 - (void)setMethod: (NSString *)method withParameters: (NSArray *)parameters {

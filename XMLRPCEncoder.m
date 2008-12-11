@@ -247,7 +247,13 @@
 }
 
 - (NSString *)encodeNumber: (NSNumber *)number {
-    return [self valueTag: @"i4" value: [number stringValue]];
+    NSString *numberType = [NSString stringWithCString: [number objCType]];
+    
+    if ([numberType isEqualToString: @"d"]) {
+        return [self valueTag: @"double" value: [number stringValue]];
+    } else {
+        return [self valueTag: @"i4" value: [number stringValue]];
+    }
 }
 
 - (NSString *)encodeString: (NSString *)string {

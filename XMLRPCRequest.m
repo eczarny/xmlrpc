@@ -119,7 +119,7 @@
     
     [myRequest setHTTPMethod: @"POST"];
     
-    if (![myRequest valueForHTTPHeaderField: @"Content-Length"]) {
+    if (![myRequest valueForHTTPHeaderField: @"Content-Type"]) {
         [myRequest addValue: @"text/xml" forHTTPHeaderField: @"Content-Type"];
     } else {
         [myRequest setValue: @"text/xml" forHTTPHeaderField: @"Content-Type"];

@@ -64,7 +64,7 @@ public class XmlRpcServerControlPanel extends JFrame {
         width  = 500;
         height = 500;
         
-        this.setBounds(((x - (width)) / 2), ((y - (height)) / 2), width, height);
+        this.setBounds(((x - (width)) / 2), ((y - (height)) / 2) - (height / 4), width, height);
         
         this.setResizable(false);
         

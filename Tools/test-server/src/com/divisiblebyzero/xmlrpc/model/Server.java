@@ -30,7 +30,6 @@ package com.divisiblebyzero.xmlrpc.model;
 // Copyright 2008 Divisible by Zero. All rights reserved.
 //
 
-import com.divisiblebyzero.xmlrpc.model.handlers.*;
 import com.divisiblebyzero.xmlrpc.view.XmlRpcServerControlPanel;
 
 import org.apache.xmlrpc.server.PropertyHandlerMapping;

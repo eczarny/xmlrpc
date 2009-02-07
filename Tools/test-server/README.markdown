@@ -55,7 +55,7 @@ The handler is now available to any incoming XML-RPC request.
 
 # License
 
-Copyright (c) 2008 Eric Czarny.
+Copyright (c) 2009 Eric Czarny.
 
 The  Cocoa XML-RPC Framework  should  be  accompanied  by  a  LICENSE file, this
 file  contains  the  license relevant to this distribution. If no LICENSE exists

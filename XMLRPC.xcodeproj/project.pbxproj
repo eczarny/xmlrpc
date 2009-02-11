@@ -31,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07127C580F4266F4009C7476 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configurations/Common.xcconfig; sourceTree = "<group>"; };
+		07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonDevelopment.xcconfig; path = Configurations/CommonDevelopment.xcconfig; sourceTree = "<group>"; };
+		07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonRelease.xcconfig; path = Configurations/CommonRelease.xcconfig; sourceTree = "<group>"; };
+		07127C5B0F4266F4009C7476 /* Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Framework.xcconfig; path = Configurations/Framework.xcconfig; sourceTree = "<group>"; };
+		07127C5C0F4266F4009C7476 /* FrameworkDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = FrameworkDevelopment.xcconfig; path = Configurations/FrameworkDevelopment.xcconfig; sourceTree = "<group>"; };
+		07127C5D0F4266F4009C7476 /* FrameworkRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = FrameworkRelease.xcconfig; path = Configurations/FrameworkRelease.xcconfig; sourceTree = "<group>"; };
 		07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionDelegate.h; sourceTree = "<group>"; };
 		075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionManager.h; sourceTree = "<group>"; };
 		075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCConnectionManager.m; sourceTree = "<group>"; };
@@ -81,6 +87,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		07127C570F4266E2009C7476 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				07127C580F4266F4009C7476 /* Common.xcconfig */,
+				07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */,
+				07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */,
+				07127C5B0F4266F4009C7476 /* Framework.xcconfig */,
+				07127C5C0F4266F4009C7476 /* FrameworkDevelopment.xcconfig */,
+				07127C5D0F4266F4009C7476 /* FrameworkRelease.xcconfig */,
+			);
+			name = Configurations;
+			sourceTree = "<group>";
+		};
 		07452BDC0E469C6900A57686 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +143,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07127C570F4266E2009C7476 /* Configurations */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
@@ -284,65 +304,31 @@
 /* Begin XCBuildConfiguration section */
 		1DEB91AE08733DA50010E9CD /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07127C5C0F4266F4009C7476 /* FrameworkDevelopment.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XMLRPC.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				PRODUCT_NAME = XMLRPC;
-				WRAPPER_EXTENSION = framework;
+				VERSION_INFO_FILE = "";
 			};
 			name = Development;
 		};
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07127C5D0F4266F4009C7476 /* FrameworkRelease.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XMLRPC.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				PRODUCT_NAME = XMLRPC;
-				WRAPPER_EXTENSION = framework;
+				VERSION_INFO_FILE = "";
 			};
 			name = Release;
 		};
 		1DEB91B208733DA50010E9CD /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = "";
 			};
 			name = Development;
 		};
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};

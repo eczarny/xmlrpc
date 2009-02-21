@@ -63,12 +63,12 @@ static char base64EncodingTable[64] = {
         return @"";
     }
     
-     result = [NSMutableString stringWithCapacity: lentext];
-     
-     raw = [data bytes];
+    result = [NSMutableString stringWithCapacity: lentext];
     
-    ixtext = 0; 
-     
+    raw = [data bytes];
+    
+    ixtext = 0;
+    
     while (true) {
         ctremaining = lentext - ixtext;
         
@@ -95,10 +95,10 @@ static char base64EncodingTable[64] = {
         
         switch (ctremaining) {
             case 1: 
-                ctcopy = 2; 
+                ctcopy = 2;
                 break;
             case 2: 
-                ctcopy = 3; 
+                ctcopy = 3;
                 break;
         }
         
@@ -112,6 +112,10 @@ static char base64EncodingTable[64] = {
         
         ixtext += 3;
         charsonline += 4;
+        
+        if ((ixtext % 90) == 0) {
+            [result appendString: @"\n"];
+        }
         
         if (length > 0) {
             if (charsonline >= length) {

@@ -114,10 +114,7 @@
     [myRequest release];
     [myIdentifier release];
     [myData release];
-    
-    if (myConnection) {
-        [myConnection release];
-    }
+    [myConnection release];
     
     [super dealloc];
 }

@@ -40,7 +40,7 @@
     }
 
     if (self = [super init]) {
-        XMLRPCEventBasedParser *parser =[[XMLRPCEventBasedParser alloc] initWithData: data];
+        XMLRPCEventBasedParser *parser = [[XMLRPCEventBasedParser alloc] initWithData: data];
         
         if (!parser) {
             return nil;

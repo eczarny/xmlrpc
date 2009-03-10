@@ -241,7 +241,7 @@
 
 - (void)parser: (NSXMLParser *)parser didEndElement: (NSString *)elementName namespaceURI: (NSString *)namespaceURI qualifiedName: (NSString *)qualifiedName {
     if ([elementName isEqualToString: @"name"]) {
-        [self setElementKey: myElementValue];
+        [self setElementKey: [myElementValue stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     } else if ([elementName isEqualToString: @"value"]) {
         id previousElementValue = myElementValue;
         
@@ -444,7 +444,7 @@
 }
 
 - (NSString *)parseString: (NSString *)value {
-    return [[value retain] autorelease];
+    return [value stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 - (NSDate *)parseDate: (NSString *)value {

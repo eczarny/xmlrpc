@@ -33,10 +33,6 @@
 
 @interface XMLRPCEventBasedParser (NSXMLParserDelegate)
 
-- (void)parserDidStartDocument: (NSXMLParser *)parser;
-
-- (void)parserDidEndDocument: (NSXMLParser *)parser;
-
 - (void)parser: (NSXMLParser *)parser didStartElement: (NSString *)elementName namespaceURI: (NSString *)namespaceURI qualifiedName: (NSString *)qualifiedName attributes:(NSDictionary *)attributes;
 
 - (void)parser: (NSXMLParser *)parser didEndElement: (NSString *)elementName namespaceURI: (NSString *)namespaceURI qualifiedName: (NSString *)qualifiedName;
@@ -190,14 +186,6 @@
 #pragma mark -
 
 @implementation XMLRPCEventBasedParser (NSXMLParserDelegate)
-
-- (void)parserDidStartDocument: (NSXMLParser *)parser {
-    NSLog(@"Parsing the XML response started with %@ as the delegate.", self);
-}
-
-- (void)parserDidEndDocument: (NSXMLParser *)parser {
-    NSLog(@"Parsing the XML response ended.");
-}
 
 - (void)parser: (NSXMLParser *)parser didStartElement: (NSString *)elementName namespaceURI: (NSString *)namespaceURI qualifiedName: (NSString *)qualifiedName attributes:(NSDictionary *)attributes {
     if ([elementName isEqualToString: @"fault"]) {

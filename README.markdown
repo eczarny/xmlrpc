@@ -116,8 +116,8 @@ to provide your patch with a detailed description of your changes.
 
 # Have any questions or suggestions?
 
-The  Cocoa  XML-RPC  Framework now has a [discussion group] [1]. So, if you have
-any questions or suggestions please check it out.
+The  Cocoa  XML-RPC  Framework now has a [discussion group] [2], if you have any
+questions or suggestions please check it out.
 
 # Acknowledgments
 

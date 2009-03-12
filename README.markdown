@@ -114,6 +114,11 @@ Finally, create the patch that you plan on submitting:
 This  patch,  my-bug-fix.diff, now contains all of your changes. Please, be sure
 to provide your patch with a detailed description of your changes.
 
+# Have any questions or suggestions?
+
+The  Cocoa  XML-RPC  Framework now has a [discussion group] [1]. So, if you have
+any questions or suggestions please check it out.
+
 # Acknowledgments
 
 The  Base64  encoder/decoder found in NSStringAdditions and NSDataAdditions have
@@ -131,3 +136,4 @@ file  contains  the  license relevant to this distribution. If no LICENSE exists
 please contact Eric Czarny <eczarny@gmail.com>.
 
 [1]: http://eczarny.lighthouseapp.com/projects/25069-xmlrpc/tickets/new
+[2]: http://groups.google.com/group/cocoa-xmlrpc-framework

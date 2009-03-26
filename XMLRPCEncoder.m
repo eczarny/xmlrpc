@@ -39,8 +39,6 @@
 
 - (NSString *)replaceTarget: (NSString *)target withValue: (NSString *)value inString: (NSString *)string;
 
-- (NSString *)escapeValue: (NSString *)value;
-
 #pragma mark -
 
 - (NSString *)encodeObject: (id)object;
@@ -155,20 +153,13 @@
 @implementation XMLRPCEncoder (XMLRPCEncoderPrivate)
 
 - (NSString *)valueTag: (NSString *)tag value: (NSString *)value {
-    return [NSString stringWithFormat: @"<value><%@>%@</%@></value>", tag, [self escapeValue: value], tag];
+    return [NSString stringWithFormat: @"<value><%@>%@</%@></value>", tag, value, tag];
 }
 
 #pragma mark -
 
 - (NSString *)replaceTarget: (NSString *)target withValue: (NSString *)value inString: (NSString *)string {
     return [[string componentsSeparatedByString: target] componentsJoinedByString: value];    
-}
-
-- (NSString *)escapeValue: (NSString *)value {
-    value = [self replaceTarget: @"&" withValue: @"&amp;" inString: value];
-    value = [self replaceTarget: @"<" withValue: @"&lt;" inString: value];
-    
-    return value;
 }
 
 #pragma mark -

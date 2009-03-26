@@ -28,7 +28,6 @@
 // Copyright (c) 2009 Divisible by Zero.
 // 
 
-#import "NSStringAdditions.h"
 #import "XMLRPCConnection.h"
 #import "XMLRPCConnectionManager.h"
 #import "XMLRPCRequest.h"

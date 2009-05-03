@@ -46,9 +46,25 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 #pragma mark -
 
++ (id)allocWithZone: (NSZone *)zone {
+    @synchronized(self) {
+        if (!sharedInstance) {
+            sharedInstance = [super allocWithZone: zone];
+            
+            return sharedInstance;
+        }
+    }
+    
+    return nil;
+}
+
+#pragma mark -
+
 + (XMLRPCConnectionManager *)sharedManager {
-    if (!sharedInstance) {
-        sharedInstance = [[XMLRPCConnectionManager alloc] init];
+    @synchronized(self) {
+        if (!sharedInstance) {
+            [[self alloc] init];
+        }
     }
     
     return sharedInstance;

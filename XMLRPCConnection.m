@@ -32,6 +32,7 @@
 #import "XMLRPCConnectionManager.h"
 #import "XMLRPCRequest.h"
 #import "XMLRPCResponse.h"
+#import "NSStringAdditions.h"
 
 @interface XMLRPCConnection (XMLRPCConnectionPrivate)
 

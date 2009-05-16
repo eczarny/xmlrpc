@@ -43,12 +43,12 @@ static char base64EncodingTable[64] = {
 + (NSString *)stringByGeneratingUUID {
     CFUUIDRef UUIDReference = CFUUIDCreate(nil);
     CFStringRef temporaryUUIDString = CFUUIDCreateString(nil, UUIDReference);
-    NSString *newUUID = [NSString stringWithString: (NSString *)temporaryUUIDString];
+    NSString *newUUID = [(NSString *)temporaryUUIDString copy];
     
     CFRelease(temporaryUUIDString);
     CFRelease(UUIDReference);
     
-    return newUUID;
+    return [newUUID autorelease];
 }
 
 + (NSString *)base64StringFromData: (NSData *)data length: (int)length {

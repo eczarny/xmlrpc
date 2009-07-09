@@ -1,7 +1,7 @@
 package com.divisiblebyzero.xmlrpc.controller;
 
 // 
-// Copyright (c) 2008 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -26,8 +26,8 @@ package com.divisiblebyzero.xmlrpc.controller;
 // xmlrpc.controller.XmlRpcServerControlPanelController.java
 // test-server
 //
-// Created by Eric Czarny on March 20, 2008.
-// Copyright 2008 Divisible by Zero. All rights reserved.
+// Created by Eric Czarny on March 20, 2009.
+// Copyright 2009 Divisible by Zero. All rights reserved.
 //
 
 import java.awt.event.ActionEvent;
@@ -38,11 +38,11 @@ import com.divisiblebyzero.xmlrpc.view.XmlRpcServerControlPanel;
 
 public class XmlRpcServerControlPanelController implements ActionListener {
     private XmlRpcServerControlPanel controlPanel;
-    private Server currentXmlRpcServer;
+    private Server xmlRpcServer;
     
     public XmlRpcServerControlPanelController(XmlRpcServerControlPanel controlPanel) {
         this.controlPanel = controlPanel;
-        this.currentXmlRpcServer = null;
+        this.xmlRpcServer = new Server(this.controlPanel);
     }
     
     public void actionPerformed(ActionEvent actionEvent) {
@@ -55,24 +55,22 @@ public class XmlRpcServerControlPanelController implements ActionListener {
         } else if (actionCommand.equals("Restart")) {
             this.restartXmlRpcServer();
         }
+        
+        this.controlPanel.refreshControls();
+    }
+    
+    public boolean isXmlRpcServerRunning() {
+    	return this.xmlRpcServer.isRunning();
     }
     
     private void startXmlRpcServer() {
-        if (this.currentXmlRpcServer != null) {
-            this.controlPanel.addLogMessage("Unable to start the XML-RPC server, an instance is already running.");
-            
-            return;
-        }
-        
         this.controlPanel.addLogMessage("Starting the XML-RPC server.");
         
-        this.currentXmlRpcServer = new Server(this.controlPanel);
-        
-        this.currentXmlRpcServer.startEmbeddedWebServer();
+        this.xmlRpcServer.startEmbeddedWebServer();
     }
     
     private void stopXmlRpcServer() {
-        if (this.currentXmlRpcServer == null) {
+        if (this.xmlRpcServer == null) {
             this.controlPanel.addLogMessage("Unable to stop the XML-RPC server, none could be found.");
             
             return;
@@ -80,13 +78,11 @@ public class XmlRpcServerControlPanelController implements ActionListener {
         
         this.controlPanel.addLogMessage("Stopping the XML-RPC server.");
         
-        this.currentXmlRpcServer.stopEmbeddedWebServer();
-        
-        this.currentXmlRpcServer = null;
+        this.xmlRpcServer.stopEmbeddedWebServer();
     }
     
     private void restartXmlRpcServer() {
-        if (this.currentXmlRpcServer == null) {
+        if (this.xmlRpcServer == null) {
             this.controlPanel.addLogMessage("Unable to restart the XML-RPC server, none could be found.");
             
             return;
@@ -94,8 +90,8 @@ public class XmlRpcServerControlPanelController implements ActionListener {
         
         this.controlPanel.addLogMessage("Restarting the XML-RPC server.");
         
-        this.currentXmlRpcServer.stopEmbeddedWebServer();
+        this.xmlRpcServer.stopEmbeddedWebServer();
         
-        this.currentXmlRpcServer.startEmbeddedWebServer();
+        this.xmlRpcServer.startEmbeddedWebServer();
     }
 }

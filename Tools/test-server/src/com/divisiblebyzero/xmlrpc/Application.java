@@ -1,7 +1,7 @@
 package com.divisiblebyzero.xmlrpc;
 
 // 
-// Copyright (c) 2008 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -26,8 +26,8 @@ package com.divisiblebyzero.xmlrpc;
 // xmlrpc.Application.java
 // test-server
 //
-// Created by Eric Czarny on March 20, 2008.
-// Copyright 2008 Divisible by Zero. All rights reserved.
+// Created by Eric Czarny on March 20, 2009.
+// Copyright 2009 Divisible by Zero. All rights reserved.
 //
 
 import javax.swing.UIManager;

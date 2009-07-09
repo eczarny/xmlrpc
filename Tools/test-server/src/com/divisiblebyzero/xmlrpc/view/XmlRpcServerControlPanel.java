@@ -1,7 +1,7 @@
 package com.divisiblebyzero.xmlrpc.view;
 
 // 
-// Copyright (c) 2008 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -26,8 +26,8 @@ package com.divisiblebyzero.xmlrpc.view;
 // xmlrpc.view.XmlRpcServerControlPanel.java
 // xmlrpc-server
 //
-// Created by Eric Czarny on March 20, 2008.
-// Copyright 2008 Divisible by Zero. All rights reserved.
+// Created by Eric Czarny on March 20, 2009.
+// Copyright 2009 Divisible by Zero. All rights reserved.
 //
 
 import java.awt.BorderLayout;
@@ -48,8 +48,12 @@ import javax.swing.JTextPane;
 import com.divisiblebyzero.xmlrpc.controller.XmlRpcServerControlPanelController;
 
 public class XmlRpcServerControlPanel extends JFrame {
+    private static final long serialVersionUID = -7835812670356078909L;
     private XmlRpcServerControlPanelController xmlRpcServerControlPanelController;
     private JTextPane logMessageTextPane;
+    private JButton startButton;
+    private JButton stopButton;
+    private JButton restartButton;
     
     public XmlRpcServerControlPanel() {
         super("Control Panel");
@@ -61,7 +65,7 @@ public class XmlRpcServerControlPanel extends JFrame {
         
         int width, height;
         
-        width  = 500;
+        width = 500;
         height = 500;
         
         this.setBounds(((x - (width)) / 2), ((y - (height)) / 2) - (height / 4), width, height);
@@ -88,7 +92,7 @@ public class XmlRpcServerControlPanel extends JFrame {
         
         /* Center Panel */
         JPanel center = new JPanel();
-        center.setBorder(BorderFactory.createTitledBorder(" " +    "Server Log" + " "));
+        center.setBorder(BorderFactory.createTitledBorder(" " + "Server Log" + " "));
         
         this.logMessageTextPane = new JTextPane();
         
@@ -121,21 +125,21 @@ public class XmlRpcServerControlPanel extends JFrame {
         /* Start & Stop Panel */
         JPanel startAndStopPanel = new JPanel();
         
-        JButton start = new JButton("Start");
+        startButton = new JButton("Start");
         
-        start.setPreferredSize(new Dimension(85, 25));
-        start.addActionListener(this.xmlRpcServerControlPanelController);
+        startButton.setPreferredSize(new Dimension(85, 25));
+        startButton.addActionListener(this.xmlRpcServerControlPanelController);
         
-        startAndStopPanel.add(start);
+        startAndStopPanel.add(startButton);
         
         startAndStopPanel.add(new JLabel(" / "));
         
-        JButton stop = new JButton("Stop");
+        stopButton = new JButton("Stop");
         
-        stop.setPreferredSize(new Dimension(85, 25));
-        stop.addActionListener(this.xmlRpcServerControlPanelController);
+        stopButton.setPreferredSize(new Dimension(85, 25));
+        stopButton.addActionListener(this.xmlRpcServerControlPanelController);
         
-        startAndStopPanel.add(stop);
+        startAndStopPanel.add(stopButton);
         
         south.add(startAndStopPanel);
         
@@ -147,14 +151,16 @@ public class XmlRpcServerControlPanel extends JFrame {
         /* Restart Panel */
         JPanel restartPanel = new JPanel();
         
-        JButton restart = new JButton("Restart");
+        restartButton = new JButton("Restart");
         
-        restart.setPreferredSize(new Dimension(95, 25));
-        restart.addActionListener(this.xmlRpcServerControlPanelController);
+        restartButton.setPreferredSize(new Dimension(95, 25));
+        restartButton.addActionListener(this.xmlRpcServerControlPanelController);
         
-        restartPanel.add(restart);
+        restartPanel.add(restartButton);
         
         south.add(restartPanel);
+        
+        this.refreshControls();
         
         return south;
     }
@@ -163,5 +169,17 @@ public class XmlRpcServerControlPanel extends JFrame {
         String existingLogMessages = this.logMessageTextPane.getText() + "\n";
         
         this.logMessageTextPane.setText(existingLogMessages + message);
+    }
+    
+    public void refreshControls() {
+    	if (this.xmlRpcServerControlPanelController.isXmlRpcServerRunning()) {
+    		this.startButton.setEnabled(false);
+    		this.stopButton.setEnabled(true);
+    		this.restartButton.setEnabled(true);
+    	} else {
+    		this.startButton.setEnabled(true);
+    		this.stopButton.setEnabled(false);
+    		this.restartButton.setEnabled(false);
+    	}
     }
 }

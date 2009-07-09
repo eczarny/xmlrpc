@@ -1,7 +1,7 @@
 package com.divisiblebyzero.xmlrpc.model;
 
 // 
-// Copyright (c) 2008 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -26,8 +26,8 @@ package com.divisiblebyzero.xmlrpc.model;
 // xmlrpc.model.Server.java
 // test-server
 //
-// Created by Eric Czarny on March 20, 2008.
-// Copyright 2008 Divisible by Zero. All rights reserved.
+// Created by Eric Czarny on March 20, 2009.
+// Copyright 2009 Divisible by Zero. All rights reserved.
 //
 
 import com.divisiblebyzero.xmlrpc.view.XmlRpcServerControlPanel;
@@ -40,22 +40,24 @@ public class Server {
     private static final int port = 8080;
     private WebServer embeddedWebServer;
     private XmlRpcServer embeddedXmlRpcServer;
+    private boolean running;
     private XmlRpcServerControlPanel controlPanel;
     
     public Server(XmlRpcServerControlPanel controlPanel) {
         this.embeddedWebServer = new WebServer(Server.port);
         this.embeddedXmlRpcServer = this.embeddedWebServer.getXmlRpcServer();
+        this.running = false;
         this.controlPanel = controlPanel;
         
         PropertyHandlerMapping propertyHandlerMapping = new PropertyHandlerMapping();
         
         try {
             propertyHandlerMapping.load(Thread.currentThread().getContextClassLoader(), "handlers.properties");
-            
-            this.embeddedXmlRpcServer.setHandlerMapping(propertyHandlerMapping);
         } catch (Exception e) {
             this.controlPanel.addLogMessage(e.getMessage());
         }
+        
+        this.embeddedXmlRpcServer.setHandlerMapping(propertyHandlerMapping);
     }
     
     public void startEmbeddedWebServer() {
@@ -66,6 +68,8 @@ public class Server {
         } catch (Exception e) {
             this.controlPanel.addLogMessage(e.getMessage());
         }
+        
+        this.running = true;
     }
     
     public void stopEmbeddedWebServer() {
@@ -76,5 +80,11 @@ public class Server {
         } catch (Exception e) {
             this.controlPanel.addLogMessage(e.getMessage());
         }
+        
+        this.running = false;
+    }
+    
+    public boolean isRunning() {
+    	return this.running;
     }
 }

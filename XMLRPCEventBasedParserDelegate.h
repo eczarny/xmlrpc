@@ -22,36 +22,61 @@
 
 // 
 // Cocoa XML-RPC Framework
-// XMLRPCEventBasedParser.h
+// XMLRPCEventBasedParserDelegate.h
 // 
-// Created by Eric Czarny on Friday, September 5, 2008.
+// Created by Eric Czarny on Tuesday, July 14, 2009.
 // Copyright (c) 2009 Divisible by Zero.
 // 
 
 #import <Foundation/Foundation.h>
 
-@class XMLRPCEventBasedParserDelegate;
+typedef enum {
+    XMLRPCElementTypeArray,
+    XMLRPCElementTypeDictionary,
+    XMLRPCElementTypeMember,
+    XMLRPCElementTypeName,
+    XMLRPCElementTypeInteger,
+    XMLRPCElementTypeDouble,
+    XMLRPCElementTypeBoolean,
+    XMLRPCElementTypeString,
+    XMLRPCElementTypeDate,
+    XMLRPCElementTypeData
+} XMLRPCElementType;
 
-@interface XMLRPCEventBasedParser : NSObject {
-    NSXMLParser *myParser;
-    XMLRPCEventBasedParserDelegate *myParserDelegate;
-    BOOL isFault;
+#pragma mark -
+
+@interface XMLRPCEventBasedParserDelegate : NSObject {
+    XMLRPCEventBasedParserDelegate *myParent;
+    NSMutableArray *myChildren;
+    XMLRPCElementType myElementType;
+    NSString *myElementKey;
+    id myElementValue;
 }
 
-- (id)initWithData: (NSData *)data;
+- (id)initWithParent: (XMLRPCEventBasedParserDelegate *)parent;
 
 #pragma mark -
 
-- (id)parse;
+- (void)setParent: (XMLRPCEventBasedParserDelegate *)parent;
 
-- (void)abortParsing;
-
-#pragma mark -
-
-- (NSError *)parserError;
+- (XMLRPCEventBasedParserDelegate *)parent;
 
 #pragma mark -
 
-- (BOOL)isFault;
+- (void)setElementType: (XMLRPCElementType)elementType;
+
+- (XMLRPCElementType)elementType;
+
+#pragma mark -
+
+- (void)setElementKey: (NSString *)elementKey;
+
+- (NSString *)elementKey;
+
+#pragma mark -
+
+- (void)setElementValue: (id)elementValue;
+
+- (id)elementValue;
 
 @end

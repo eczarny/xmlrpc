@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */; };
+		0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */; };
 		07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParserDelegate.h; sourceTree = "<group>"; };
+		0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParserDelegate.m; sourceTree = "<group>"; };
 		07127C580F4266F4009C7476 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configurations/Common.xcconfig; sourceTree = "<group>"; };
 		07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonDevelopment.xcconfig; path = Configurations/CommonDevelopment.xcconfig; sourceTree = "<group>"; };
 		07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonRelease.xcconfig; path = Configurations/CommonRelease.xcconfig; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				07B0C6000E33A659006453B4 /* XMLRPCEncoder.m */,
 				07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */,
 				07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */,
+				0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */,
+				0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */,
 				07B0C6010E33A659006453B4 /* XMLRPCRequest.h */,
 				07B0C6020E33A659006453B4 /* XMLRPCRequest.m */,
 				07B0C6030E33A659006453B4 /* XMLRPCResponse.h */,
@@ -210,14 +216,15 @@
 				07B0C6050E33A659006453B4 /* NSDataAdditions.h in Headers */,
 				07B0C6070E33A659006453B4 /* NSStringAdditions.h in Headers */,
 				07B0C6090E33A659006453B4 /* XMLRPC.h in Headers */,
+				07B0C6170E33A672006453B4 /* XMLRPC.pch in Headers */,
 				07B0C60A0E33A659006453B4 /* XMLRPCConnection.h in Headers */,
+				07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */,
+				075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */,
 				07B0C60E0E33A659006453B4 /* XMLRPCEncoder.h in Headers */,
+				07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */,
+				0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */,
 				07B0C6100E33A659006453B4 /* XMLRPCRequest.h in Headers */,
 				07B0C6120E33A659006453B4 /* XMLRPCResponse.h in Headers */,
-				07B0C6170E33A672006453B4 /* XMLRPC.pch in Headers */,
-				075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */,
-				07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */,
-				07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +287,12 @@
 				07B0C6060E33A659006453B4 /* NSDataAdditions.m in Sources */,
 				07B0C6080E33A659006453B4 /* NSStringAdditions.m in Sources */,
 				07B0C60B0E33A659006453B4 /* XMLRPCConnection.m in Sources */,
+				075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */,
 				07B0C60F0E33A659006453B4 /* XMLRPCEncoder.m in Sources */,
+				07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */,
+				0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				07B0C6110E33A659006453B4 /* XMLRPCRequest.m in Sources */,
 				07B0C6130E33A659006453B4 /* XMLRPCResponse.m in Sources */,
-				075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */,
-				07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,7 @@
     <target name="run" depends="jar">
         <java jar="${distribution.jar}" fork="yes" />
     </target>
-
+    
     <target name="install" depends="jar">
         <echo>Stub for project installation.</echo>
     </target>

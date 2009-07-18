@@ -19,7 +19,7 @@ The  following  example of the Cocoa XML-RPC Framework assumes that the included
 XML-RPC  test  server  is  available. More information on the test server can be
 found in the README under:
 
-    XMLRPC\Tools\test-server
+    XMLRPC\Tools\Test Server
 
 Please review this document before moving forward.
 
@@ -74,7 +74,7 @@ example, the following will handle successful XML-RPC responses:
 
 Refer  to  XMLRPCConnectionDelegate.h for a full list of methods a delegate must
 implement.  Each of these delegate methods plays a role in the life of an active
-XML-RPC connection. 
+XML-RPC connection.
 
 # What if I find a bug, or what if I want to help?
 

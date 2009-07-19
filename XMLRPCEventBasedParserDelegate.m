@@ -65,7 +65,7 @@
         myChildren = [[NSMutableArray alloc] initWithCapacity: 1];
         myElementType = XMLRPCElementTypeString;
         myElementKey = nil;
-        myElementValue = nil;
+        myElementValue = [[NSMutableString alloc] init];
     }
     
     return self;

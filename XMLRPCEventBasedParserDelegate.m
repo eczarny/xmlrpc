@@ -191,7 +191,7 @@
 
 - (void)parser: (NSXMLParser *)parser didEndElement: (NSString *)element namespaceURI: (NSString *)namespaceURI qualifiedName: (NSString *)qualifiedName {
     if ([element isEqualToString: @"value"] || [element isEqualToString: @"member"] || [element isEqualToString: @"name"]) {
-        NSString *elementValue;
+        NSString *elementValue = nil;
         
         if ((myElementType != XMLRPCElementTypeArray) && ![self isDictionaryElementType: myElementType]) {
             elementValue = [self parseString: myElementValue];

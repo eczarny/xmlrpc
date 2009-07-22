@@ -1,13 +1,13 @@
 // 
 // XMLRPC
-// Framework.xcconfig
+// XMLRPC.xcconfig
 // 
 // Created by Eric Czarny on Tuesday, February 10, 2009.
 // Copyright (c) 2009 Divisible by Zero.
 // 
 
 PRODUCT_NAME = XMLRPC
-INFOPLIST_FILE = Info.plist
+INFOPLIST_FILE = Resources/Property Lists/XMLRPC-Info.plist
 
 FRAMEWORK_VERSION = A
 DYLIB_CURRENT_VERSION = 1

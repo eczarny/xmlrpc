@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<methodResponse>
+  <params>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>Name</name>
+            <value><string>Eric Czarny</string></value>
+          </member>
+          <member>
+            <name>Age</name>
+            <value><i4>25</i4></value>
+          </member>
+        </struct>
+      </value>
+    </param>
+  </params>
+</methodResponse>

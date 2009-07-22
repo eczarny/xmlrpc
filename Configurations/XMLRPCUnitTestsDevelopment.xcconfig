@@ -1,0 +1,10 @@
+// 
+// XMLRPC
+// XMLRPCUnitTestsDevelopment.xcconfig
+// 
+// Created by Eric Czarny on Tuesday, March 9, 2009.
+// Copyright (c) 2009 Divisible by Zero.
+// 
+
+#include "XMLRPCUnitTests.xcconfig"
+#include "CommonDevelopment.xcconfig"

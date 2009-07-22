@@ -21,28 +21,20 @@
 // 
 
 // 
-// Cocoa XML-RPC Framework
-// XMLRPCTreeBasedParser.h
+// XMLRPC
+// XMLRPCParserTest.h
 // 
-// Created by Eric Czarny on Wednesday, January 14, 2004.
+// Created by Eric Czarny on Tuesday, March 9, 2009.
 // Copyright (c) 2009 Divisible by Zero.
 // 
 
 #import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
 
-@interface XMLRPCTreeBasedParser : NSObject {
-    NSXMLDocument *myXML;
-    BOOL isFault;
+@interface XMLRPCParserTest : SenTestCase {
+    NSDictionary *myTestCases;
 }
 
-- (id)initWithData: (NSData *)data;
-
-#pragma mark -
-
-- (id)parse;
-
-#pragma mark -
-
-- (BOOL)isFault;
+- (void)testEventBasedParser;
 
 @end

@@ -1,0 +1,15 @@
+// 
+// XMLRPC
+// XMLRPCUnitTests.xcconfig
+// 
+// Created by Eric Czarny on Tuesday, March 9, 2009.
+// Copyright (c) 2009 Divisible by Zero.
+// 
+
+PRODUCT_NAME = XMLRPCUnitTests
+INFOPLIST_FILE = Resources/Property Lists/XMLRPCUnitTests-Info.plist
+
+WRAPPER_EXTENSION=octest
+
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = XMLRPC.pch

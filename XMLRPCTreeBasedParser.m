@@ -51,9 +51,11 @@
 
 #pragma mark -
 
-- (NSNumber *)parseNumber: (NSXMLElement *)element isDouble: (BOOL)flag;
+- (NSNumber *)parseInteger: (NSXMLElement *)element;
 
-- (CFBooleanRef)parseBoolean: (NSXMLElement *)element;
+- (NSNumber *)parseDouble: (NSXMLElement *)element;
+
+- (NSNumber *)parseBoolean: (NSXMLElement *)element;
 
 - (NSString *)parseString: (NSXMLElement *)element;
 
@@ -75,9 +77,6 @@
     if (self = [super init]) {
         NSError *error = nil;
         myXML = [[NSXMLDocument alloc] initWithData: data options: NSXMLDocumentTidyXML error: &error];
-        myDateFormatter = [[NSDateFormatter alloc] init];
-        
-        [myDateFormatter setDateFormat: @"yyyyMMdd'T'HH:mm:ss"];
         
         if (!myXML) {
             if (error) {
@@ -153,7 +152,6 @@
 
 - (void)dealloc {
     [myXML release];
-    [myDateFormatter release];
     
     [super dealloc];
 }
@@ -194,9 +192,9 @@
     } else if ([name isEqualToString: @"struct"]) {
         return [self parseDictionary: element];
     } else if ([name isEqualToString: @"int"] || [name isEqualToString: @"i4"]) {
-        return [self parseNumber: element isDouble: NO];
+        return [self parseInteger: element];
     } else if ([name isEqualToString: @"double"]) {
-        return [self parseNumber: element isDouble: YES];
+        return [self parseDouble: element];
     } else if ([name isEqualToString: @"boolean"]) {
         return (id)[self parseBoolean: element];
     } else if ([name isEqualToString: @"string"]) {
@@ -279,20 +277,20 @@
 
 #pragma mark -
 
-- (NSNumber *)parseNumber: (NSXMLElement *)element isDouble: (BOOL)flag {
-    if (flag) {
-        return [NSNumber numberWithDouble: [[element stringValue] doubleValue]];
-    }
-    
-    return [NSNumber numberWithInt: [[element stringValue] intValue]];
+- (NSNumber *)parseInteger: (NSXMLElement *)element {
+    return [NSNumber numberWithInteger: [[element stringValue] integerValue]];
 }
 
-- (CFBooleanRef)parseBoolean: (NSXMLElement *)element {
+- (NSNumber *)parseDouble: (NSXMLElement *)element {
+    return [NSNumber numberWithDouble: [[element stringValue] doubleValue]];
+}
+
+- (NSNumber *)parseBoolean: (NSXMLElement *)element {
     if ([[element stringValue] isEqualToString: @"1"]) {
-        return kCFBooleanTrue;
+        return [NSNumber numberWithBool: YES];
     }
     
-    return kCFBooleanFalse;
+    return [NSNumber numberWithBool: NO];
 }
 
 - (NSString *)parseString: (NSXMLElement *)element {
@@ -300,7 +298,11 @@
 }
 
 - (NSDate *)parseDate: (NSXMLElement *)element {
-    return [myDateFormatter dateFromString: [element stringValue]];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    
+    [dateFormatter setDateFormat: @"yyyyMMdd'T'HH:mm:ss"];
+    
+    return [dateFormatter dateFromString: [element stringValue]];
 }
 
 - (NSData *)parseData: (NSXMLElement *)element {

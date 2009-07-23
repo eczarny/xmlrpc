@@ -238,7 +238,7 @@
 }
 
 - (NSString *)encodeNumber: (NSNumber *)number {
-    NSString *numberType = [NSString stringWithCString: [number objCType]];
+    NSString *numberType = [NSString stringWithCString: [number objCType] encoding: NSUTF8StringEncoding];
     
     if ([numberType isEqualToString: @"d"]) {
         return [self valueTag: @"double" value: [number stringValue]];

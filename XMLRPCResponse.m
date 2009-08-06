@@ -29,7 +29,6 @@
 // 
 
 #import "XMLRPCResponse.h"
-#import "XMLRPCTreeBasedParser.h"
 #import "XMLRPCEventBasedParser.h"
 
 @implementation XMLRPCResponse

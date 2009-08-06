@@ -100,8 +100,6 @@
 		07B52C02101008670015AD8B /* XMLRPCParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLRPCParserTest.m; path = "Unit Tests/XMLRPCParserTest.m"; sourceTree = "<group>"; };
 		07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParser.h; sourceTree = "<group>"; };
 		07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParser.m; sourceTree = "<group>"; };
-		07EF457A0E721D00009F2708 /* XMLRPCTreeBasedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCTreeBasedParser.h; sourceTree = "<group>"; };
-		07EF457B0E721D00009F2708 /* XMLRPCTreeBasedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCTreeBasedParser.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -268,8 +266,6 @@
 				07B0C6020E33A659006453B4 /* XMLRPCRequest.m */,
 				07B0C6030E33A659006453B4 /* XMLRPCResponse.h */,
 				07B0C6040E33A659006453B4 /* XMLRPCResponse.m */,
-				07EF457A0E721D00009F2708 /* XMLRPCTreeBasedParser.h */,
-				07EF457B0E721D00009F2708 /* XMLRPCTreeBasedParser.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

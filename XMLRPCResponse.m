@@ -42,6 +42,8 @@
         XMLRPCEventBasedParser *parser = [[XMLRPCEventBasedParser alloc] initWithData: data];
         
         if (!parser) {
+            [self release];
+            
             return nil;
         }
     

@@ -70,6 +70,8 @@
         } else {
             NSLog(@"The connection, %@, could not be established!", myIdentifier);
             
+            [self release];
+            
             return nil;
         }
     }

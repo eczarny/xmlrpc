@@ -473,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF0B0F67227F00B71B22 /* XMLRPCUnitTestsDevelopment.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -485,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF0C0F67227F00B71B22 /* XMLRPCUnitTestsRelease.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -497,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF100F6722D600B71B22 /* XMLRPCDevelopment.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				VERSION_INFO_FILE = "";
 			};
 			name = Development;
@@ -505,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF110F6722D600B71B22 /* XMLRPCRelease.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				VERSION_INFO_FILE = "";
 			};
 			name = Release;
@@ -513,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 			};
 			name = Development;
 		};
@@ -520,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 			};
 			name = Release;
 		};

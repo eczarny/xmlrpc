@@ -41,6 +41,10 @@
 
 #pragma mark -
 
+- (NSDate *)parseDateString: (NSString *)dateString withFormat: (NSString *)format;
+
+#pragma mark -
+
 - (NSNumber *)parseInteger: (NSString *)value;
 
 - (NSNumber *)parseDouble: (NSString *)value;
@@ -310,6 +314,21 @@
 
 #pragma mark -
 
+- (NSDate *)parseDateString: (NSString *)dateString withFormat: (NSString *)format {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDate *result = nil;
+    
+    [dateFormatter setDateFormat: format];
+    
+    result = [dateFormatter dateFromString: dateString];
+    
+    [dateFormatter release];
+    
+    return result;
+}
+
+#pragma mark -
+
 - (NSNumber *)parseInteger: (NSString *)value {
     return [NSNumber numberWithInteger: [value integerValue]];
 }
@@ -331,11 +350,15 @@
 }
 
 - (NSDate *)parseDate: (NSString *)value {
-    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    NSDate *result = nil;
     
-    [dateFormatter setDateFormat: @"yyyyMMdd'T'HH:mm:ss"];
+    result = [self parseDateString: value withFormat: @"yyyyMMdd'T'HH:mm:ss"];
     
-    return [dateFormatter dateFromString: value];
+    if (!result) {
+        result = [self parseDateString: value withFormat: @"yyyy'-'MM'-'dd'T'HH:mm:ss"];
+    }
+    
+    return result;
 }
 
 - (NSData *)parseData: (NSString *)value {

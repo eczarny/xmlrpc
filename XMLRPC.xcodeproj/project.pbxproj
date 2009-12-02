@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */; };
 		0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */; };
+		07075BAE10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */; };
 		07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParserDelegate.h; sourceTree = "<group>"; };
 		0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParserDelegate.m; sourceTree = "<group>"; };
+		07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AlternativeDateFormatsTestCase.xml; path = "Resources/Test Cases/AlternativeDateFormatsTestCase.xml"; sourceTree = "<group>"; };
 		07127C580F4266F4009C7476 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configurations/Common.xcconfig; sourceTree = "<group>"; };
 		07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonDevelopment.xcconfig; path = Configurations/CommonDevelopment.xcconfig; sourceTree = "<group>"; };
 		07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonRelease.xcconfig; path = Configurations/CommonRelease.xcconfig; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		07B52BE4101004270015AD8B /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
+				07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */,
 				07A0A9021016A51000CEE3C7 /* EmptyBooleanTestCase.xml */,
 				07A0A9031016A51000CEE3C7 /* EmptyDataTestCase.xml */,
 				07A0A9041016A51000CEE3C7 /* EmptyDoubleTestCase.xml */,
@@ -385,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07075BAE10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml in Resources */,
 				07A0A9071016A51000CEE3C7 /* EmptyBooleanTestCase.xml in Resources */,
 				07A0A9081016A51000CEE3C7 /* EmptyDataTestCase.xml in Resources */,
 				07A0A9091016A51000CEE3C7 /* EmptyDoubleTestCase.xml in Resources */,

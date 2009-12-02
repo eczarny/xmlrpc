@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternativeDateFormatsTestCase</key>
+	<array>
+		<date>2009-12-02T01:49:00Z</date>
+		<date>2009-12-02T01:50:00Z</date>
+	</array>
 	<key>EmptyBooleanTestCase</key>
 	<integer>0</integer>
 	<key>EmptyDataTestCase</key>
@@ -25,6 +30,8 @@
 	<dict>
 		<key>Name</key>
 		<string>Eric Czarny</string>
+		<key>Birthday</key>
+		<date>1984-04-15T05:00:00Z</date>
 		<key>Age</key>
 		<integer>25</integer>
 	</dict>

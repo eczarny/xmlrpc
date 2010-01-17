@@ -86,11 +86,6 @@ Those  wishing to contribute to the project should begin by obtaining the latest
 source  with  Git. The project is hosted on GitHub, making it easy for anyone to
 make contributions. Simply create a fork and make your changes.
 
-# Have any questions or suggestions?
-
-The  Cocoa  XML-RPC  Framework now has a [discussion group] [2], if you have any
-questions or suggestions please check it out.
-
 # Acknowledgments
 
 The  Base64  encoder/decoder found in NSStringAdditions and NSDataAdditions have
@@ -108,4 +103,3 @@ file  contains  the  license relevant to this distribution. If no LICENSE exists
 please contact Eric Czarny <eczarny@gmail.com>.
 
 [1]: http://eczarny.lighthouseapp.com/projects/25069-xmlrpc/tickets/new
-[2]: http://groups.google.com/group/cocoa-xmlrpc-framework

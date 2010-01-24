@@ -46,7 +46,7 @@
 
 #pragma mark -
 
-+ (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request;
++ (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request error: (NSError **)error;
 
 #pragma mark -
 

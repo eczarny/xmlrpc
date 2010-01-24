@@ -81,8 +81,8 @@
 
 #pragma mark -
 
-+ (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request {
-    NSData *data = [[[NSURLConnection sendSynchronousRequest: [request request] returningResponse: nil error: nil] retain] autorelease];
++ (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request error: (NSError **)error {
+    NSData *data = [[[NSURLConnection sendSynchronousRequest: [request request] returningResponse: nil error: error] retain] autorelease];
     
     if (data) {
         return [[[XMLRPCResponse alloc] initWithData: data] autorelease];

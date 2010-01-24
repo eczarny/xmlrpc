@@ -1,7 +1,7 @@
 package com.divisiblebyzero.xmlrpc.view;
 
 // 
-// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2010 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -26,8 +26,8 @@ package com.divisiblebyzero.xmlrpc.view;
 // xmlrpc.view.XmlRpcServerControlPanel.java
 // xmlrpc-server
 //
-// Created by Eric Czarny on March 20, 2009.
-// Copyright 2009 Divisible by Zero. All rights reserved.
+// Created by Eric Czarny on Friday, March 20, 2009.
+// Copyright (c) 2010 Divisible by Zero.
 //
 
 import java.awt.BorderLayout;

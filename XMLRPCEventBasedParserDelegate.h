@@ -1,5 +1,5 @@
 // 
-// Copyright (c) 2009 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2010 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -25,7 +25,7 @@
 // XMLRPCEventBasedParserDelegate.h
 // 
 // Created by Eric Czarny on Tuesday, July 14, 2009.
-// Copyright (c) 2009 Divisible by Zero.
+// Copyright (c) 2010 Divisible by Zero.
 // 
 
 #import <Foundation/Foundation.h>

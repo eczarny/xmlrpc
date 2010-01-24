@@ -28,7 +28,7 @@
 // Copyright (c) 2010 Divisible by Zero.
 // 
 
-#import "NSDataAdditions.h"
+#import "NSStringAdditions.h"
 
 /* Base64 Encoding Table */
 static char base64EncodingTable[64] = {
@@ -38,7 +38,7 @@ static char base64EncodingTable[64] = {
     'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
 };
 
-@implementation NSString (NSStringExtensions)
+@implementation NSString (NSStringAdditions)
 
 + (NSString *)stringByGeneratingUUID {
     CFUUIDRef UUIDReference = CFUUIDCreate(nil);

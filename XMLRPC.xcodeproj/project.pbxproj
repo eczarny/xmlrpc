@@ -10,10 +10,10 @@
 		0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */; };
 		0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */; };
 		07075BAE10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */; };
-		07158502114326FC003D3454 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07158500114326FC003D3454 /* InfoPlist.strings */; };
 		07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */; };
+		0759A6F31143495E000DFE98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0759A6F11143495E000DFE98 /* InfoPlist.strings */; };
 		0799AF270F6724E300B71B22 /* XMLRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* XMLRPC.framework */; };
 		0799AF5E0F67266400B71B22 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0799AF5D0F67266400B71B22 /* SenTestingKit.framework */; };
 		07A0A9071016A51000CEE3C7 /* EmptyBooleanTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9021016A51000CEE3C7 /* EmptyBooleanTestCase.xml */; };
@@ -62,10 +62,10 @@
 		07127C580F4266F4009C7476 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configurations/Common.xcconfig; sourceTree = "<group>"; };
 		07127C590F4266F4009C7476 /* CommonDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonDevelopment.xcconfig; path = Configurations/CommonDevelopment.xcconfig; sourceTree = "<group>"; };
 		07127C5A0F4266F4009C7476 /* CommonRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonRelease.xcconfig; path = Configurations/CommonRelease.xcconfig; sourceTree = "<group>"; };
-		07158501114326FC003D3454 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionDelegate.h; sourceTree = "<group>"; };
 		075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCConnectionManager.h; sourceTree = "<group>"; };
 		075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCConnectionManager.m; sourceTree = "<group>"; };
+		0759A6F21143495E000DFE98 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Languages/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0799AF030F6721FF00B71B22 /* XMLRPCUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMLRPCUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799AF040F6721FF00B71B22 /* XMLRPCUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "XMLRPCUnitTests-Info.plist"; path = "Resources/Property Lists/XMLRPCUnitTests-Info.plist"; sourceTree = "<group>"; };
 		0799AF0A0F67227F00B71B22 /* XMLRPCUnitTests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = XMLRPCUnitTests.xcconfig; path = Configurations/XMLRPCUnitTests.xcconfig; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		074E8A200F6D8D6E00BE0B22 /* Localized Strings */ = {
 			isa = PBXGroup;
 			children = (
-				07158500114326FC003D3454 /* InfoPlist.strings */,
+				0759A6F11143495E000DFE98 /* InfoPlist.strings */,
 			);
 			name = "Localized Strings";
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07158502114326FC003D3454 /* InfoPlist.strings in Resources */,
+				0759A6F31143495E000DFE98 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,10 +477,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		07158500114326FC003D3454 /* InfoPlist.strings */ = {
+		0759A6F11143495E000DFE98 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07158501114326FC003D3454 /* English */,
+				0759A6F21143495E000DFE98 /* English */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

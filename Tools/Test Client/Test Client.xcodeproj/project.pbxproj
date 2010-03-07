@@ -33,7 +33,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2D722BEA10050410003B60D8 /* TestClientConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClientConstants.h; sourceTree = "<group>"; };
 		2D722C05100508FF003B60D8 /* XMLRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLRPC.framework; path = /Library/Frameworks/XMLRPC.framework; sourceTree = "<absolute>"; };
 		2D740F421007CC2000AE14FE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Languages/English.lproj/XMLParserWindow.xib; sourceTree = "<group>"; };
 		2D740F441007CCB000AE14FE /* XMLParserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParserWindowController.h; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 			children = (
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				32CA4F630368D1EE00C91783 /* TestClient.pch */,
-				2D722BEA10050410003B60D8 /* TestClientConstants.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

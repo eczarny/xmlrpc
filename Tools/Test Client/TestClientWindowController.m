@@ -29,14 +29,13 @@
 //
 
 #import "TestClientWindowController.h"
-#import "TestClientConstants.h"
 
 @implementation TestClientWindowController
 
 static TestClientWindowController *sharedInstance = nil;
 
 - (id)init {
-    if (self = [super initWithWindowNibName: TestClientWindowNibName]) {
+    if (self = [super initWithWindowNibName: @"TestClientWindow"]) {
         myResponse = nil;
     }
     

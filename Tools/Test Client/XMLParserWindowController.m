@@ -30,7 +30,6 @@
 
 #import "XMLParserWindowController.h"
 #import "XMLRPCEventBasedParser.h"
-#import "TestClientConstants.h"
 
 @interface XMLParserWindowController (XMLParserWindowControllerPrivate)
 
@@ -45,7 +44,7 @@
 static XMLParserWindowController *sharedInstance = nil;
 
 - (id)init {
-    if (self = [super initWithWindowNibName: XMLParserWindowNibName]) {
+    if (self = [super initWithWindowNibName: @"XMLParserWindow"]) {
         myParsedObject = nil;
     }
     

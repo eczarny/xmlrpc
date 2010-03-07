@@ -22,7 +22,7 @@
 
 // 
 // Test Client
-// ApplicationController.h
+// TestClientApplicationController.h
 // 
 // Created by Eric Czarny on Wednesday, July 8, 2009.
 // Copyright (c) 2010 Divisible by Zero.
@@ -30,7 +30,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ApplicationController : NSObject {
+@interface TestClientApplicationController : NSObject {
 	
 }
 

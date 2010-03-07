@@ -22,16 +22,16 @@
 
 //
 // Test Client
-// XMLParserWindowController.m
+// TestClientXMLParserWindowController.m
 //
 // Created by Eric Czarny on Thursday, July 9, 2009.
 // Copyright (c) 2010 Divisible by Zero.
 //
 
-#import "XMLParserWindowController.h"
+#import "TestClientXMLParserWindowController.h"
 #import "XMLRPCEventBasedParser.h"
 
-@interface XMLParserWindowController (XMLParserWindowControllerPrivate)
+@interface TestClientXMLParserWindowController (TestClientXMLParserWindowControllerPrivate)
 
 - (NSString *)typeForItem: (id)item;
 
@@ -39,12 +39,12 @@
 
 #pragma mark -
 
-@implementation XMLParserWindowController
+@implementation TestClientXMLParserWindowController
 
-static XMLParserWindowController *sharedInstance = nil;
+static TestClientXMLParserWindowController *sharedInstance = nil;
 
 - (id)init {
-    if (self = [super initWithWindowNibName: @"XMLParserWindow"]) {
+    if (self = [super initWithWindowNibName: @"TestClientXMLParserWindow"]) {
         myParsedObject = nil;
     }
     
@@ -67,7 +67,7 @@ static XMLParserWindowController *sharedInstance = nil;
 
 #pragma mark -
 
-+ (XMLParserWindowController *)sharedController {
++ (TestClientXMLParserWindowController *)sharedController {
     @synchronized(self) {
         if (!sharedInstance) {
             [[self alloc] init];
@@ -218,7 +218,7 @@ static XMLParserWindowController *sharedInstance = nil;
 
 #pragma mark -
 
-@implementation XMLParserWindowController (XMLParserWindowControllerPrivate)
+@implementation TestClientXMLParserWindowController (TestClientXMLParserWindowControllerPrivate)
 
 - (NSString *)typeForItem: (id)item {
     NSString *type;

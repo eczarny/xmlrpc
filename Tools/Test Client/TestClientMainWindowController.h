@@ -22,7 +22,7 @@
 
 //
 // Test Client
-// TestClientWindowController.h
+// TestClientMainWindowController.h
 //
 // Created by Eric Czarny on Tuesday, July 7, 2009.
 // Copyright (c) 2010 Divisible by Zero.
@@ -30,7 +30,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface TestClientWindowController : NSWindowController<XMLRPCConnectionDelegate> {
+@interface TestClientMainWindowController : NSWindowController<XMLRPCConnectionDelegate> {
     XMLRPCResponse *myResponse;
     IBOutlet NSTextField *myRequestURL;
 	IBOutlet NSTextField *myMethod;
@@ -43,7 +43,7 @@
     IBOutlet NSOutlineView *myParsedResponse;
 }
 
-+ (TestClientWindowController *)sharedController;
++ (TestClientMainWindowController *)sharedController;
 
 #pragma mark -
 
@@ -63,7 +63,7 @@
 
 #pragma mark -
 
-@interface TestClientWindowController (XMLRPCConnectionDelegate)
+@interface TestClientMainWindowController (XMLRPCConnectionDelegate)
 
 - (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response;
 

@@ -20,32 +20,36 @@
 // IN THE SOFTWARE.
 // 
 
-// 
+//
 // Test Client
-// ApplicationController.m
-// 
-// Created by Eric Czarny on Wednesday, July 8, 2009.
+// TestClientXMLParserWindowController.h
+//
+// Created by Eric Czarny on Friday, July 10, 2009.
 // Copyright (c) 2010 Divisible by Zero.
-// 
+//
 
-#import "ApplicationController.h"
-#import "TestClientWindowController.h"
-#import "XMLParserWindowController.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation ApplicationController
-
-- (void)applicationDidFinishLaunching: (NSNotification *)notification {
-    [self toggleTestClientWindow: self];
+@interface TestClientXMLParserWindowController : NSWindowController {
+    id myParsedObject;
+    IBOutlet NSTextView *myXML;
+    IBOutlet NSOutlineView *myParserResult;
 }
+
++ (TestClientXMLParserWindowController *)sharedController;
 
 #pragma mark -
 
-- (void)toggleTestClientWindow: (id)sender {
-    [[TestClientWindowController sharedController] toggleTestClientWindow: self];
-}
+- (void)showXMLParserWindow: (id)sender;
 
-- (void)toggleXMLParserWindow: (id)sender {
-    [[XMLParserWindowController sharedController] toggleXMLParserWindow: self];
-}
+- (void)hideXMLParserWindow: (id)sender;
+
+#pragma mark -
+
+- (void)toggleXMLParserWindow: (id)sender;
+
+#pragma mark -
+
+- (void)parse: (id)sender;
 
 @end

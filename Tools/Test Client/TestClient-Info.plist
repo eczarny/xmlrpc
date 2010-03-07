@@ -23,7 +23,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0d</string>
 	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
+	<string>TestClient</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

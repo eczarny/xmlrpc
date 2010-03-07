@@ -22,20 +22,20 @@
 
 //
 // Test Client
-// TestClientWindowController.m
+// TestClientMainWindowController.m
 //
 // Created by Eric Czarny on Tuesday, July 7, 2009.
 // Copyright (c) 2010 Divisible by Zero.
 //
 
-#import "TestClientWindowController.h"
+#import "TestClientMainWindowController.h"
 
-@implementation TestClientWindowController
+@implementation TestClientMainWindowController
 
-static TestClientWindowController *sharedInstance = nil;
+static TestClientMainWindowController *sharedInstance = nil;
 
 - (id)init {
-    if (self = [super initWithWindowNibName: @"TestClientWindow"]) {
+    if (self = [super initWithWindowNibName: @"TestClientMainWindow"]) {
         myResponse = nil;
     }
     
@@ -58,7 +58,7 @@ static TestClientWindowController *sharedInstance = nil;
 
 #pragma mark -
 
-+ (TestClientWindowController *)sharedController {
++ (TestClientMainWindowController *)sharedController {
     @synchronized(self) {
         if (!sharedInstance) {
             [[self alloc] init];

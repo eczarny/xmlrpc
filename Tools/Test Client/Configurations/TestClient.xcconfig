@@ -1,0 +1,15 @@
+// 
+// Test Client
+// TestClient.xcconfig
+// 
+// Created by Eric Czarny on Wednesday, July 8, 2009.
+// Copyright (c) 2010 Divisible by Zero.
+// 
+
+PRODUCT_NAME = Test Client
+INFOPLIST_FILE = TestClient-Info.plist
+
+GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = TestClient.pch
+
+INSTALL_PATH = /Applications

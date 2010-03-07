@@ -1,0 +1,13 @@
+// 
+// Test Client
+// CommonRelease.xcconfig
+// 
+// Created by Eric Czarny on Monday, February 23, 2009.
+// Copyright (c) 2010 Divisible by Zero.
+// 
+
+#include "Common.xcconfig"
+
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+GCC_OPTIMIZATION_LEVEL = s

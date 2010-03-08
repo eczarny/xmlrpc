@@ -51,12 +51,20 @@ simply add it to the propertyHandlerMapping in Server.java:
         this.controlPanel.addLogMessage(e.getMessage());
     }
 
-The handler is now available to any incoming XML-RPC request.
+The handler is now available to any incoming XML-RPC requests.
 
 # License
 
 Copyright (c) 2010 Eric Czarny.
 
 The  Cocoa XML-RPC Framework  should  be  accompanied  by  a  LICENSE file, this
-file  contains  the  license relevant to this distribution. If no LICENSE exists
-please contact Eric Czarny <eczarny@gmail.com>.
+file  contains  the  license relevant to this distribution.
+
+If no LICENSE exists please contact Eric Czarny <eczarny@gmail.com>.
+
+Copyright (c) 2010 The Apache Software Foundation.
+
+Apache  XML-RPC  is provided under the [The Apache Software License] [1]. A copy
+of this license should be included with the XML-RPC test server.
+
+ [1]: http://www.apache.org/licenses/LICENSE-2.0

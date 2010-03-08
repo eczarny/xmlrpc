@@ -99,7 +99,8 @@ creator of NetNewsWire.
 Copyright (c) 2010 Eric Czarny.
 
 The  Cocoa XML-RPC Framework  should  be  accompanied  by  a  LICENSE file, this
-file  contains  the  license relevant to this distribution. If no LICENSE exists
-please contact Eric Czarny <eczarny@gmail.com>.
+file  contains  the  license relevant to this distribution.
+
+If no LICENSE exists please contact Eric Czarny <eczarny@gmail.com>.
 
 [1]: http://eczarny.lighthouseapp.com/projects/25069-xmlrpc/tickets/new

@@ -42,7 +42,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2D722C05100508FF003B60D8 /* XMLRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLRPC.framework; path = /Library/Frameworks/XMLRPC.framework; sourceTree = "<absolute>"; };
+		2D722C05100508FF003B60D8 /* XMLRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XMLRPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC70E301004D90100BBEEA6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Languages/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DC70E321004D90F00BBEEA6 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = Configurations/Common.xcconfig; sourceTree = "<group>"; };
 		2DC70E331004D90F00BBEEA6 /* CommonDevelopment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CommonDevelopment.xcconfig; path = Configurations/CommonDevelopment.xcconfig; sourceTree = "<group>"; };

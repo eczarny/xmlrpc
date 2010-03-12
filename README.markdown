@@ -5,7 +5,7 @@ framework written in Objective-C.
 
 # Requirements
 
-The  Cocoa  XML-RPC Framework has been built, and designed, for Mac OS X 10.4 or
+The  Cocoa  XML-RPC Framework has been built, and designed, for Mac OS X 10.5 or
 later. This release should provide basic iPhone and iPod touch support.
 
 This  version  of  the  Cocoa  XML-RPC  Framework includes a new event-based XML

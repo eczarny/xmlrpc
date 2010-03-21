@@ -68,13 +68,23 @@ example, the following will handle successful XML-RPC responses:
         } else {
             NSLog(@"Parsed response: %@", [response object]);
         }
-
+        
         NSLog(@"Response body: %@", [response body]);
     }
 
 Refer  to  XMLRPCConnectionDelegate.h for a full list of methods a delegate must
 implement.  Each of these delegate methods plays a role in the life of an active
 XML-RPC connection.
+
+## Sending synchronous XML-RPC requests
+
+There  are  situations  where  it  may  be  desirable to invoke XML-RPC requests
+synchronously  in  another  thread  or  background process. The following method
+declared in XMLRPCConnection.h will invoke an XML-RPC request synchronously:
+
+    + (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request error: (NSError **)error;
+
+If there is a problem sending the XML-RPC request expect nil to be returned.
 
 # What if I find a bug, or what if I want to help?
 

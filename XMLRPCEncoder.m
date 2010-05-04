@@ -81,7 +81,7 @@
 - (NSString *)encode {
     NSMutableString *buffer = [NSMutableString stringWithString: @"<?xml version=\"1.0\"?><methodCall>"];
     
-    [buffer appendFormat: @"<methodName>%@</methodName>", myMethod];
+    [buffer appendFormat: @"<methodName>%@</methodName>", [self encodeString: myMethod]];
     
     [buffer appendString: @"<params>"];
     

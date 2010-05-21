@@ -42,6 +42,10 @@
 
 - (void)connection: (NSURLConnection *)connection didFailWithError: (NSError *)error;
 
+#pragma mark -
+
+- (BOOL)connection: (NSURLConnection *)connection canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *)protectionSpace;
+
 - (void)connection: (NSURLConnection *)connection didReceiveAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge;
 
 - (void)connection: (NSURLConnection *)connection didCancelAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge;
@@ -157,15 +161,17 @@
     [myManager closeConnectionForIdentifier: myIdentifier];
 }
 
+#pragma mark -
+
+- (BOOL)connection: (NSURLConnection *)connection canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *)protectionSpace {
+    return [myDelegate request: myRequest canAuthenticateAgainstProtectionSpace: protectionSpace];
+}
+
 - (void)connection: (NSURLConnection *)connection didReceiveAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge {
-    NSLog(@"The connection, %@, received an authentication challenge.", myIdentifier);
-    
     [myDelegate request: myRequest didReceiveAuthenticationChallenge: challenge];
 }
 
 - (void)connection: (NSURLConnection *)connection didCancelAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge {
-    NSLog(@"The connection, %@, cancelled an authentication challenge.", myIdentifier);
-    
     [myDelegate request: myRequest didCancelAuthenticationChallenge: challenge];
 }
 
@@ -173,10 +179,6 @@
     if (myData && ([myData length] > 0)) {
         XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
         XMLRPCRequest *request = [[myRequest retain] autorelease];
-        
-        NSLog(@"The connection, %@, received a response!", myIdentifier);
-        
-        NSLog(@"The HTTP request was successful. Received %d bytes of data!", [myData length]);
         
         [myDelegate request: request didReceiveResponse: response];
     }

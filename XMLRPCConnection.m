@@ -67,7 +67,7 @@
         
         myConnection = [[NSURLConnection alloc] initWithRequest: [request request] delegate: self];
         
-        myDelegate = delegate;
+        myDelegate = [delegate retain];
         
         if (myConnection) {
             NSLog(@"The connection, %@, has been established!", myIdentifier);
@@ -121,6 +121,7 @@
     [myIdentifier release];
     [myData release];
     [myConnection release];
+    [myDelegate release];
     
     [super dealloc];
 }

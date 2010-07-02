@@ -32,7 +32,7 @@
 
 @class XMLRPCConnection, XMLRPCRequest, XMLRPCResponse;
 
-@protocol XMLRPCConnectionDelegate
+@protocol XMLRPCConnectionDelegate<NSObject>
 
 - (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response;
 

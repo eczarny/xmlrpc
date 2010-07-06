@@ -45,7 +45,7 @@ typedef enum {
 
 #pragma mark -
 
-@interface XMLRPCEventBasedParserDelegate : NSObject {
+@interface XMLRPCEventBasedParserDelegate : NSObject<NSXMLParserDelegate> {
     XMLRPCEventBasedParserDelegate *myParent;
     NSMutableArray *myChildren;
     XMLRPCElementType myElementType;

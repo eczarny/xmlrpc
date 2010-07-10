@@ -55,7 +55,7 @@
 
 - (NSString *)encodeNumber: (NSNumber *)number;
 
-- (NSString *)encodeString: (NSString *)string;
+- (NSString *)encodeString: (NSString *)string omitTag: (BOOL)omitTag;
 
 - (NSString *)encodeDate: (NSDate *)date;
 
@@ -81,7 +81,7 @@
 - (NSString *)encode {
     NSMutableString *buffer = [NSMutableString stringWithString: @"<?xml version=\"1.0\"?><methodCall>"];
     
-    [buffer appendFormat: @"<methodName>%@</methodName>", [self encodeString: myMethod]];
+    [buffer appendFormat: @"<methodName>%@</methodName>", [self encodeString: myMethod omitTag: YES]];
     
     [buffer appendString: @"<params>"];
     
@@ -178,13 +178,13 @@
     } else if ([object isKindOfClass: [NSNumber class]]) {
         return [self encodeNumber: object];
     } else if ([object isKindOfClass: [NSString class]]) {
-        return [self encodeString: object];
+        return [self encodeString: object omitTag: NO];
     } else if ([object isKindOfClass: [NSDate class]]) {
         return [self encodeDate: object];
     } else if ([object isKindOfClass: [NSData class]]) {
         return [self encodeData: object];
     } else {
-        return [self encodeString: object];
+        return [self encodeString: object omitTag: NO];
     }
 }
 
@@ -217,7 +217,7 @@
     
     while (key = [enumerator nextObject]) {
         [buffer appendString: @"<member>"];
-        [buffer appendFormat: @"<name>%@</name>", [self encodeString: key]];
+        [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: NO]];
         [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
         [buffer appendString: @"</member>"];
     }
@@ -247,11 +247,11 @@
     }
 }
 
-- (NSString *)encodeString: (NSString *)string {
+- (NSString *)encodeString: (NSString *)string omitTag: (BOOL)omitTag {
     string = [self replaceTarget: @"&" withValue: @"&amp;" inString: string];
     string = [self replaceTarget: @"<" withValue: @"&lt;" inString: string];
     
-    return [self valueTag: @"string" value: string];
+    return omitTag ? string : [self valueTag: @"string" value: string];
 }
 
 - (NSString *)encodeDate: (NSDate *)date {

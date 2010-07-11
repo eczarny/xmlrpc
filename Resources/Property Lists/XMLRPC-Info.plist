@@ -19,9 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>ZERO</string>
 	<key>CFBundleVersion</key>
-	<string>222.0</string>
+	<string>2.2.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.2d</string>
+	<string>2.2.2</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>

@@ -8,11 +8,15 @@
 	<string>com.divisiblebyzero.XMLRPCUnitTests</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>XMLRPCUnitTests</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleSignature</key>
 	<string>ZERO</string>
 	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 </dict>
 </plist>

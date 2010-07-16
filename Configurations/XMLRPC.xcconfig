@@ -17,4 +17,4 @@ GCC_PRECOMPILE_PREFIX_HEADER = YES
 GCC_PREFIX_HEADER = XMLRPC.pch
 GCC_ENABLE_OBJC_GC = supported
 
-INSTALL_PATH = @executable_path/../Frameworks
+INSTALL_PATH = @loader_path/../Frameworks

@@ -217,7 +217,7 @@
     
     while (key = [enumerator nextObject]) {
         [buffer appendString: @"<member>"];
-        [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: NO]];
+        [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: YES]];
         [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
         [buffer appendString: @"</member>"];
     }
@@ -248,10 +248,7 @@
 }
 
 - (NSString *)encodeString: (NSString *)string omitTag: (BOOL)omitTag {
-    string = [self replaceTarget: @"&" withValue: @"&amp;" inString: string];
-    string = [self replaceTarget: @"<" withValue: @"&lt;" inString: string];
-    
-    return omitTag ? string : [self valueTag: @"string" value: string];
+    return omitTag ? [string escapedString] : [self valueTag: @"string" value: [string escapedString]];
 }
 
 - (NSString *)encodeDate: (NSDate *)date {

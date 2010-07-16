@@ -36,4 +36,10 @@
 
 + (NSString *)base64StringFromData: (NSData *)data length: (int)length;
 
+#pragma mark -
+
+- (NSString *)unescapedString;
+
+- (NSString *)escapedString;
+
 @end

@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// Cocoa XML-RPC Framework
-// XMLRPC.h
-// 
-// Created by Eric Czarny on Wednesday, February 10, 2004.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import <XMLRPC/XMLRPCConnection.h>
 #import <XMLRPC/XMLRPCConnectionDelegate.h>
 #import <XMLRPC/XMLRPCConnectionManager.h>

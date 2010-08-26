@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// Cocoa XML-RPC Framework
-// XMLRPCEventBasedParserDelegate.m
-// 
-// Created by Eric Czarny on Tuesday, July 14, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import "XMLRPCEventBasedParserDelegate.h"
 #import "NSDataAdditions.h"
 

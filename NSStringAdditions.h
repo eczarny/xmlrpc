@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// Cocoa XML-RPC Framework
-// NSStringAdditions.h
-// 
-// Created by Eric Czarny on Wednesday, January 14, 2004.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import <Foundation/Foundation.h>
 
 @interface NSString (NSStringAdditions)

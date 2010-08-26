@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// Cocoa XML-RPC Framework
-// XMLRPCConnectionDelegate.h
-// 
-// Created by Eric Czarny on Thursday, July 31, 2008.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import <Foundation/Foundation.h>
 
 @class XMLRPCConnection, XMLRPCRequest, XMLRPCResponse;

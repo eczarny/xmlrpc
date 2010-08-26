@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// XMLRPC
-// XMLRPCParserTest.h
-// 
-// Created by Eric Czarny on Tuesday, March 9, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 

@@ -1,11 +1,3 @@
-// 
-// XMLRPC
-// CommonDevelopment.xcconfig
-// 
-// Created by Eric Czarny on Tuesday, February 10, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #include "Common.xcconfig"
 
 ONLY_ACTIVE_ARCH = YES

@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// XMLRPC
-// XMLRPCParserTest.m
-// 
-// Created by Eric Czarny on Tuesday, March 9, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import "XMLRPCParserTest.h"
 #import "XMLRPCEventBasedParser.h"
 #import "NSDataAdditions.h"

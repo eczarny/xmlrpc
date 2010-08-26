@@ -20,14 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-// 
-// Cocoa XML-RPC Framework
-// XMLRPCRequest.m
-// 
-// Created by Eric Czarny on Wednesday, January 14, 2004.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #import "XMLRPCRequest.h"
 #import "XMLRPCEncoder.h"
 

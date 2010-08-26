@@ -20,7 +20,6 @@
 // IN THE SOFTWARE.
 // 
 
-#import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 
 @interface XMLRPCParserTest : SenTestCase {

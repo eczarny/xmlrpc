@@ -14,7 +14,7 @@
 		075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */; };
 		0759A6F31143495E000DFE98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0759A6F11143495E000DFE98 /* InfoPlist.strings */; };
-		0799AF270F6724E300B71B22 /* XMLRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* XMLRPC.framework */; };
+		0799AF270F6724E300B71B22 /* XMLRPC in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* XMLRPC */; };
 		0799AF5E0F67266400B71B22 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0799AF5D0F67266400B71B22 /* SenTestingKit.framework */; };
 		07A0A9071016A51000CEE3C7 /* EmptyBooleanTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9021016A51000CEE3C7 /* EmptyBooleanTestCase.xml */; };
 		07A0A9081016A51000CEE3C7 /* EmptyDataTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9031016A51000CEE3C7 /* EmptyDataTestCase.xml */; };
@@ -43,6 +43,27 @@
 		07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */; };
 		07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		903B0DC012F7581200BD6E09 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F60E33A659006453B4 /* NSDataAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC112F7581200BD6E09 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F70E33A659006453B4 /* NSDataAdditions.m */; };
+		903B0DC212F7581200BD6E09 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F80E33A659006453B4 /* NSStringAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC312F7581200BD6E09 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F90E33A659006453B4 /* NSStringAdditions.m */; };
+		903B0DC412F7581200BD6E09 /* XMLRPCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC512F7581200BD6E09 /* XMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FA0E33A659006453B4 /* XMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC612F7581200BD6E09 /* XMLRPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FB0E33A659006453B4 /* XMLRPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC712F7581200BD6E09 /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5FC0E33A659006453B4 /* XMLRPCConnection.m */; };
+		903B0DC812F7581200BD6E09 /* XMLRPCConnectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DC912F7581200BD6E09 /* XMLRPCConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */; };
+		903B0DCA12F7581200BD6E09 /* XMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FF0E33A659006453B4 /* XMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DCB12F7581200BD6E09 /* XMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6000E33A659006453B4 /* XMLRPCEncoder.m */; };
+		903B0DCC12F7581200BD6E09 /* XMLRPCEventBasedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DCD12F7581200BD6E09 /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */; };
+		903B0DCE12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DCF12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */; };
+		903B0DD012F7581200BD6E09 /* XMLRPCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6010E33A659006453B4 /* XMLRPCRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DD112F7581200BD6E09 /* XMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6020E33A659006453B4 /* XMLRPCRequest.m */; };
+		903B0DD212F7581200BD6E09 /* XMLRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6030E33A659006453B4 /* XMLRPCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		903B0DD312F7581200BD6E09 /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6040E33A659006453B4 /* XMLRPCResponse.m */; };
+		903B0DD412F7581F00BD6E09 /* XMLRPC.pch in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6160E33A672006453B4 /* XMLRPC.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +126,8 @@
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		8DC2EF5B0486A6940098B216 /* XMLRPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLRPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* XMLRPC */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = XMLRPC; sourceTree = BUILT_PRODUCTS_DIR; };
+		903B0DB612F7574800BD6E09 /* libXMLRPC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXMLRPC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +138,7 @@
 			files = (
 				07E761001011788B00E9BDEE /* Cocoa.framework in Frameworks */,
 				0799AF5E0F67266400B71B22 /* SenTestingKit.framework in Frameworks */,
-				0799AF270F6724E300B71B22 /* XMLRPC.framework in Frameworks */,
+				0799AF270F6724E300B71B22 /* XMLRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,14 +150,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		903B0DB412F7574800BD6E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* XMLRPC.framework */,
+				8DC2EF5B0486A6940098B216 /* XMLRPC */,
 				0799AF030F6721FF00B71B22 /* XMLRPCUnitTests.octest */,
+				903B0DB612F7574800BD6E09 /* libXMLRPC.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,6 +353,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		903B0DB212F7574800BD6E09 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903B0DC012F7581200BD6E09 /* NSDataAdditions.h in Headers */,
+				903B0DC212F7581200BD6E09 /* NSStringAdditions.h in Headers */,
+				903B0DC412F7581200BD6E09 /* XMLRPCConnectionDelegate.h in Headers */,
+				903B0DC512F7581200BD6E09 /* XMLRPC.h in Headers */,
+				903B0DC612F7581200BD6E09 /* XMLRPCConnection.h in Headers */,
+				903B0DC812F7581200BD6E09 /* XMLRPCConnectionManager.h in Headers */,
+				903B0DCA12F7581200BD6E09 /* XMLRPCEncoder.h in Headers */,
+				903B0DCC12F7581200BD6E09 /* XMLRPCEventBasedParser.h in Headers */,
+				903B0DCE12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.h in Headers */,
+				903B0DD012F7581200BD6E09 /* XMLRPCRequest.h in Headers */,
+				903B0DD212F7581200BD6E09 /* XMLRPCResponse.h in Headers */,
+				903B0DD412F7581F00BD6E09 /* XMLRPC.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -362,8 +411,26 @@
 			name = XMLRPC;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = XMLRPC;
-			productReference = 8DC2EF5B0486A6940098B216 /* XMLRPC.framework */;
+			productReference = 8DC2EF5B0486A6940098B216 /* XMLRPC */;
 			productType = "com.apple.product-type.framework";
+		};
+		903B0DB512F7574800BD6E09 /* libXMLRPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 903B0DB912F7577B00BD6E09 /* Build configuration list for PBXNativeTarget "libXMLRPC" */;
+			buildPhases = (
+				903B0DB212F7574800BD6E09 /* Headers */,
+				903B0DB312F7574800BD6E09 /* Sources */,
+				903B0DB412F7574800BD6E09 /* Frameworks */,
+				903B0DFB12F75B2300BD6E09 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libXMLRPC;
+			productName = iOSXMLRPC;
+			productReference = 903B0DB612F7574800BD6E09 /* libXMLRPC.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -372,7 +439,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "XMLRPC" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* XMLRPC */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -380,6 +454,7 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* XMLRPC */,
 				0799AF020F6721FF00B71B22 /* XMLRPCUnitTests */,
+				903B0DB512F7574800BD6E09 /* libXMLRPC */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +514,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		903B0DFB12F75B2300BD6E09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Purpose:\n#   Create a static library for iPhone from within XCode\n#   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\n#   ...no, I don't understand why they did such a stupid thing either!\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" = ${ALREADYINVOKED} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUULD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\"\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\nfi\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\nCURRENTCONFIG_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\nmkdir \"${CURRENTCONFIG_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nlipo -create -output \"${CURRENTCONFIG_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\n\nif [ -d \"${CURRENTCONFIG_DEVICE_DIR}/headers\" ]\nthen\n  mkdir -p \"${CURRENTCONFIG_UNIVERSAL_DIR}/headers\"\n  cp -R \"${CURRENTCONFIG_DEVICE_DIR}\"/headers/* \"${CURRENTCONFIG_UNIVERSAL_DIR}/headers\"\nfi";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -463,6 +552,22 @@
 				0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				07B0C6110E33A659006453B4 /* XMLRPCRequest.m in Sources */,
 				07B0C6130E33A659006453B4 /* XMLRPCResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		903B0DB312F7574800BD6E09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903B0DC112F7581200BD6E09 /* NSDataAdditions.m in Sources */,
+				903B0DC312F7581200BD6E09 /* NSStringAdditions.m in Sources */,
+				903B0DC712F7581200BD6E09 /* XMLRPCConnection.m in Sources */,
+				903B0DC912F7581200BD6E09 /* XMLRPCConnectionManager.m in Sources */,
+				903B0DCB12F7581200BD6E09 /* XMLRPCEncoder.m in Sources */,
+				903B0DCD12F7581200BD6E09 /* XMLRPCEventBasedParser.m in Sources */,
+				903B0DCF12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.m in Sources */,
+				903B0DD112F7581200BD6E09 /* XMLRPCRequest.m in Sources */,
+				903B0DD312F7581200BD6E09 /* XMLRPCResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +653,41 @@
 			};
 			name = Release;
 		};
+		903B0DB712F7574900BD6E09 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				PRODUCT_NAME = XMLRPC;
+				PUBLIC_HEADERS_FOLDER_PATH = /headers/;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv6 i386";
+			};
+			name = Development;
+		};
+		903B0DB812F7574900BD6E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				PRODUCT_NAME = XMLRPC;
+				PUBLIC_HEADERS_FOLDER_PATH = /headers/;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv6 i386";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -574,6 +714,15 @@
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Development */,
 				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		903B0DB912F7577B00BD6E09 /* Build configuration list for PBXNativeTarget "libXMLRPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				903B0DB712F7574900BD6E09 /* Development */,
+				903B0DB812F7574900BD6E09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

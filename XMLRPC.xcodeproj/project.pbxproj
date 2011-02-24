@@ -39,6 +39,7 @@
 		07B52BE8101004670015AD8B /* SimpleStructTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07B52BE6101004670015AD8B /* SimpleStructTestCase.xml */; };
 		07B52BEA101004810015AD8B /* TestCases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B52BE9101004810015AD8B /* TestCases.plist */; };
 		07B52C03101008670015AD8B /* XMLRPCParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C02101008670015AD8B /* XMLRPCParserTest.m */; };
+		07BB09891316B65A00E1911C /* DefaultTypeTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07BB09881316B65A00E1911C /* DefaultTypeTestCase.xml */; };
 		07E761001011788B00E9BDEE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */; };
 		07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */; };
@@ -121,6 +122,7 @@
 		07B52BE9101004810015AD8B /* TestCases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestCases.plist; path = "Resources/Property Lists/TestCases.plist"; sourceTree = "<group>"; };
 		07B52C01101008670015AD8B /* XMLRPCParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLRPCParserTest.h; path = "Unit Tests/XMLRPCParserTest.h"; sourceTree = "<group>"; };
 		07B52C02101008670015AD8B /* XMLRPCParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLRPCParserTest.m; path = "Unit Tests/XMLRPCParserTest.m"; sourceTree = "<group>"; };
+		07BB09881316B65A00E1911C /* DefaultTypeTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DefaultTypeTestCase.xml; path = "Resources/Test Cases/DefaultTypeTestCase.xml"; sourceTree = "<group>"; };
 		07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParser.h; sourceTree = "<group>"; };
 		07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParser.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */,
+				07BB09881316B65A00E1911C /* DefaultTypeTestCase.xml */,
 				07A0A9021016A51000CEE3C7 /* EmptyBooleanTestCase.xml */,
 				07A0A9031016A51000CEE3C7 /* EmptyDataTestCase.xml */,
 				07A0A9041016A51000CEE3C7 /* EmptyDoubleTestCase.xml */,
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07075BAE10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml in Resources */,
+				07BB09891316B65A00E1911C /* DefaultTypeTestCase.xml in Resources */,
 				07A0A9071016A51000CEE3C7 /* EmptyBooleanTestCase.xml in Resources */,
 				07A0A9081016A51000CEE3C7 /* EmptyDataTestCase.xml in Resources */,
 				07A0A9091016A51000CEE3C7 /* EmptyDoubleTestCase.xml in Resources */,

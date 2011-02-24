@@ -7,6 +7,8 @@
 		<date>2009-12-02T01:49:00Z</date>
 		<date>2009-12-02T01:50:00Z</date>
 	</array>
+	<key>DefaultTypeTestCase</key>
+	<string>Hello World!</string>
 	<key>EmptyBooleanTestCase</key>
 	<integer>0</integer>
 	<key>EmptyDataTestCase</key>

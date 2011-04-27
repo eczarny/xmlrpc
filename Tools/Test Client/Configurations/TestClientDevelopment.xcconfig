@@ -1,10 +1,2 @@
-// 
-// Test Client
-// TestClientDevelopment.xcconfig
-// 
-// Created by Eric Czarny on Wednesday, July 8, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-// 
-
 #include "TestClient.xcconfig"
 #include "CommonDevelopment.xcconfig"

@@ -1,5 +1,5 @@
 // 
-// Copyright (c) 2010 Eric Czarny <eczarny@gmail.com>
+// Copyright (c) 2011 Eric Czarny <eczarny@gmail.com>
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of  this  software  and  associated documentation files (the "Software"), to
@@ -19,14 +19,6 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 // 
-
-//
-// Test Client
-// TestClientMainWindowController.h
-//
-// Created by Eric Czarny on Tuesday, July 7, 2009.
-// Copyright (c) 2010 Divisible by Zero.
-//
 
 #import <Cocoa/Cocoa.h>
 
@@ -72,5 +64,7 @@
 - (void)request: (XMLRPCRequest *)request didReceiveAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge;
 
 - (void)request: (XMLRPCRequest *)request didCancelAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge;
+
+- (BOOL)request: (XMLRPCRequest *)request canAuthenticateAgainstProtectionSpace: (NSURLProtectionSpace *)protectionSpace;
 
 @end

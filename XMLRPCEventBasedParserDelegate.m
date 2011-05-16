@@ -56,7 +56,8 @@
 @implementation XMLRPCEventBasedParserDelegate
 
 - (id)initWithParent: (XMLRPCEventBasedParserDelegate *)parent {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         myParent = parent;
         myChildren = [[NSMutableArray alloc] initWithCapacity: 1];
         myElementType = XMLRPCElementTypeString;

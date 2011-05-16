@@ -60,7 +60,8 @@
 @implementation XMLRPCEncoder
 
 - (id)init {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         myMethod = [[NSString alloc] init];
         myParameters = [[NSArray alloc] init];
     }
@@ -81,7 +82,7 @@
         NSEnumerator *enumerator = [myParameters objectEnumerator];
         id parameter = nil;
         
-        while (parameter = [enumerator nextObject]) {
+        while ((parameter = [enumerator nextObject])) {
             [buffer appendString: @"<param>"];
             [buffer appendString: [self encodeObject: parameter]];
             [buffer appendString: @"</param>"];

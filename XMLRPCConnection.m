@@ -51,7 +51,8 @@
 @implementation XMLRPCConnection
 
 - (id)initWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate manager: (XMLRPCConnectionManager *)manager {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         myManager = [manager retain];
         myRequest = [request retain];
         myIdentifier = [[NSString stringByGeneratingUUID] retain];

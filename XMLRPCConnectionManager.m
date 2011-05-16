@@ -29,7 +29,8 @@
 static XMLRPCConnectionManager *sharedInstance = nil;
 
 - (id)init {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         myConnections = [[NSMutableDictionary alloc] init];
     }
     
@@ -55,7 +56,7 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 + (XMLRPCConnectionManager *)sharedManager {
     @synchronized(self) {
         if (!sharedInstance) {
-            [[self alloc] init];
+            sharedInstance = [[self alloc] init];
         }
     }
     

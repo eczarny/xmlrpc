@@ -26,7 +26,8 @@
 @implementation XMLRPCRequest
 
 - (id)initWithURL: (NSURL *)URL {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         if (URL) {
             myRequest = [[NSMutableURLRequest alloc] initWithURL: URL];
         } else {

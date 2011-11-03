@@ -79,10 +79,15 @@
 #pragma mark -
 
 + (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request error: (NSError **)error {
-    NSData *data = [[[NSURLConnection sendSynchronousRequest: [request request] returningResponse: nil error: error] retain] autorelease];
+    NSHTTPURLResponse *response = nil;
+    NSData *data = [[[NSURLConnection sendSynchronousRequest: [request request] returningResponse: &response error: error] retain] autorelease];
     
-    if (data) {
-        return [[[XMLRPCResponse alloc] initWithData: data] autorelease];
+    if (response) {
+        NSInteger statusCode = [response statusCode];
+        
+        if ((statusCode < 400) && data) {
+            return [[[XMLRPCResponse alloc] initWithData: data] autorelease];
+        }
     }
     
     return nil;

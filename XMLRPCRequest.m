@@ -124,6 +124,13 @@
         [myRequest setValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
     }
     
+    if (![self userAgent]) {
+      NSString *userAgent = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserAgent"];
+      if (userAgent) {
+        [self setUserAgent:userAgent];
+      }
+    }
+    
     [myRequest setHTTPBody: content];
     
     return (NSURLRequest *)myRequest;

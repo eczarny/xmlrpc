@@ -65,4 +65,8 @@
 
 - (NSURLRequest *)request;
 
+#pragma mark -
+
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)header;
+
 @end

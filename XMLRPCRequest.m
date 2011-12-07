@@ -129,6 +129,13 @@
     return (NSURLRequest *)myRequest;
 }
 
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)header {
+    [myRequest setValue:value forHTTPHeaderField:header];
+}
+
+
+#pragma mark -
+
 #pragma mark -
 
 - (void)dealloc {

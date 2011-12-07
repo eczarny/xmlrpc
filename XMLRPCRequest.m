@@ -124,10 +124,30 @@
         [myRequest setValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
     }
     
+    if (![myRequest valueForHTTPHeaderField: @"Accept"]) {
+        [myRequest addValue: @"text/xml" forHTTPHeaderField: @"Accept"];
+    } else {
+        [myRequest setValue: @"text/xml" forHTTPHeaderField: @"Accept"];
+    }
+    
+    if (![self userAgent]) {
+      NSString *userAgent = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserAgent"];
+      if (userAgent) {
+        [self setUserAgent:userAgent];
+      }
+    }
+    
     [myRequest setHTTPBody: content];
     
     return (NSURLRequest *)myRequest;
 }
+
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)header {
+    [myRequest setValue:value forHTTPHeaderField:header];
+}
+
+
+#pragma mark -
 
 #pragma mark -
 

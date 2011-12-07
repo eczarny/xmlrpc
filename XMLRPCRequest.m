@@ -124,6 +124,12 @@
         [myRequest setValue: [contentLength stringValue] forHTTPHeaderField: @"Content-Length"];
     }
     
+    if (![myRequest valueForHTTPHeaderField: @"Accept"]) {
+        [myRequest addValue: @"text/xml" forHTTPHeaderField: @"Accept"];
+    } else {
+        [myRequest setValue: @"text/xml" forHTTPHeaderField: @"Accept"];
+    }
+    
     if (![self userAgent]) {
       NSString *userAgent = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserAgent"];
       if (userAgent) {

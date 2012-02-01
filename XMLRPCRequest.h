@@ -29,6 +29,9 @@
 
 - (void)setMethod: (NSString *)method withParameters: (NSArray *)parameters;
 
+- (void)setParameter: (id)parameter;
+- (void)setParameters: (NSArray*)parameters;
+
 #pragma mark -
 
 - (NSString *)method;

@@ -98,6 +98,18 @@
     }
 }
 
+- (void)setParameters: (NSArray*)parameters {
+    if (myParameters) {
+        [myParameters release];
+    }
+    
+    if (!parameters) {
+        myParameters = nil;
+    } else {
+        myParameters = [parameters retain];
+    }
+}
+
 #pragma mark -
 
 - (NSString *)method {

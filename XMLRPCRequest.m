@@ -62,6 +62,20 @@
     [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
+- (void) setParameter:(id)parameter {
+    NSArray *parameters = nil;
+    
+    if (parameter) {
+        parameters = [NSArray arrayWithObject: parameter];
+    }
+    
+    [myXMLEncoder setParameters:parameters];
+}
+
+- (void) setParameters:(NSArray *)parameters {
+    [myXMLEncoder setParameters:parameters];
+}
+
 #pragma mark -
 
 - (NSString *)method {

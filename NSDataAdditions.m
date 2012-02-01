@@ -23,6 +23,10 @@
     result = [NSMutableData dataWithCapacity: lentext];
     
     ixinput = 0;
+    input[0]=0;
+    input[1]=0;
+    input[2]=0;
+    input[3]=0;
     
     while (true) {
         if (ixtext >= lentext) {

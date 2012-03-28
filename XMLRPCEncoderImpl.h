@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface XMLRPCEncoder : NSObject {
+@interface XMLRPCEncoderImpl : NSObject {
     NSString *myMethod;
     NSArray *myParameters;
 }

@@ -1,8 +1,8 @@
-#import "XMLRPCEncoder.h"
+#import "XMLRPCEncoderImpl.h"
 #import "NSStringAdditions.h"
 #import "NSData+Base64.h"
 
-@interface XMLRPCEncoder (XMLRPCEncoderPrivate)
+@interface XMLRPCEncoderImpl (XMLRPCEncoderPrivate)
 
 - (NSString *)valueTag: (NSString *)tag value: (NSString *)value;
 
@@ -36,7 +36,7 @@
 
 #pragma mark -
 
-@implementation XMLRPCEncoder
+@implementation XMLRPCEncoderImpl
 
 - (id)init {
     self = [super init];
@@ -122,7 +122,7 @@
 
 #pragma mark -
 
-@implementation XMLRPCEncoder (XMLRPCEncoderPrivate)
+@implementation XMLRPCEncoderImpl (XMLRPCEncoderPrivate)
 
 - (NSString *)valueTag: (NSString *)tag value: (NSString *)value {
     return [NSString stringWithFormat: @"<value><%@>%@</%@></value>", tag, value, tag];

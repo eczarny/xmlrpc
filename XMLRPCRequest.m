@@ -1,5 +1,5 @@
 #import "XMLRPCRequest.h"
-#import "XMLRPCEncoder.h"
+#import "XMLRPCEncoderImpl.h"
 
 @implementation XMLRPCRequest
 
@@ -12,7 +12,7 @@
             myRequest = [[NSMutableURLRequest alloc] init];
         }
         
-        myXMLEncoder = [[XMLRPCEncoder alloc] init];
+        myXMLEncoder = [[XMLRPCEncoderImpl alloc] init];
     }
     
     return self;

@@ -1,5 +1,6 @@
 #import "XMLRPCEncoder.h"
 #import "NSStringAdditions.h"
+#import "NSData+Base64.h"
 
 @interface XMLRPCEncoder (XMLRPCEncoderPrivate)
 
@@ -239,9 +240,7 @@
 }
 
 - (NSString *)encodeData: (NSData *)data {
-    NSString *buffer = [NSString base64StringFromData: data length: [data length]];
-
-    return [self valueTag: @"base64" value: buffer];
+    return [self valueTag: @"base64" value: [data base64EncodedString]];
 }
 
 @end

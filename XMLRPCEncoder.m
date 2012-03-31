@@ -185,11 +185,19 @@
     [buffer appendString: @"<value><struct>"];
     
     NSString *key = nil;
+    NSObject *val;
     
     while (key = [enumerator nextObject]) {
         [buffer appendString: @"<member>"];
         [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: YES]];
-        [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
+
+        val = [dictionary objectForKey: key];
+        if (val != [NSNull null]) {
+            [buffer appendString: [self encodeObject: val]];
+        } else {
+            [buffer appendString:@"<value><nil/></value>"];
+        }
+
         [buffer appendString: @"</member>"];
     }
     

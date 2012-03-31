@@ -1,5 +1,6 @@
 #import "XMLRPCEncoder.h"
 #import "NSStringAdditions.h"
+#import "NSData+Base64.h"
 
 @interface XMLRPCEncoder (XMLRPCEncoderPrivate)
 
@@ -185,11 +186,19 @@
     [buffer appendString: @"<value><struct>"];
     
     NSString *key = nil;
+    NSObject *val;
     
     while (key = [enumerator nextObject]) {
         [buffer appendString: @"<member>"];
         [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: YES]];
-        [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
+
+        val = [dictionary objectForKey: key];
+        if (val != [NSNull null]) {
+            [buffer appendString: [self encodeObject: val]];
+        } else {
+            [buffer appendString:@"<value><nil/></value>"];
+        }
+
         [buffer appendString: @"</member>"];
     }
     
@@ -231,9 +240,7 @@
 }
 
 - (NSString *)encodeData: (NSData *)data {
-    NSString *buffer = [NSString base64StringFromData: data length: [data length]];
-
-    return [self valueTag: @"base64" value: buffer];
+    return [self valueTag: @"base64" value: [data base64EncodedString]];
 }
 
 @end

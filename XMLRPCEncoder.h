@@ -1,11 +1,3 @@
-//
-//  XMlRPCEncoder.h
-//  XMLRPC
-//
-//  Created by Zack Powers on 4/2/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @protocol XMLRPCEncoder <NSObject>

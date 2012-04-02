@@ -43,6 +43,7 @@
 		07E761001011788B00E9BDEE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */; };
 		07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */; };
+		2DCADEDB1529E24300B47A4F /* XMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		903B0DC012F7581200BD6E09 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F60E33A659006453B4 /* NSDataAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		903B0DC112F7581200BD6E09 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F70E33A659006453B4 /* NSDataAdditions.m */; };
@@ -128,6 +129,7 @@
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLRPCEncoder.h; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* XMLRPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLRPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903B0DB612F7574800BD6E09 /* libXMLRPC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXMLRPC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -293,6 +295,7 @@
 				07B0C5FC0E33A659006453B4 /* XMLRPCConnection.m */,
 				075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */,
 				075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */,
+				2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */,
 				07B0C5FF0E33A659006453B4 /* XMLRPCEncoderImpl.h */,
 				07B0C6000E33A659006453B4 /* XMLRPCEncoderImpl.m */,
 				07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */,
@@ -374,6 +377,7 @@
 				903B0DC512F7581200BD6E09 /* XMLRPC.h in Headers */,
 				903B0DC612F7581200BD6E09 /* XMLRPCConnection.h in Headers */,
 				903B0DC812F7581200BD6E09 /* XMLRPCConnectionManager.h in Headers */,
+				2DCADEDB1529E24300B47A4F /* XMLRPCEncoder.h in Headers */,
 				903B0DCA12F7581200BD6E09 /* XMLRPCEncoderImpl.h in Headers */,
 				903B0DCC12F7581200BD6E09 /* XMLRPCEventBasedParser.h in Headers */,
 				903B0DCE12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.h in Headers */,

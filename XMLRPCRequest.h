@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@class XMLRPCEncoderImpl;
+#import "XMlRPCEncoder.h"
 
 @interface XMLRPCRequest : NSObject {
     NSMutableURLRequest *myRequest;
-    XMLRPCEncoderImpl *myXMLEncoder;
+    id <XMLRPCEncoder> myXMLEncoder;
 }
 
 - (id)initWithURL: (NSURL *)URL;

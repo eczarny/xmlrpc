@@ -1,4 +1,5 @@
 #import "XMLRPCRequest.h"
+#import "XMLRPCEncoder.h"
 #import "XMLRPCEncoderImpl.h"
 
 @implementation XMLRPCRequest

@@ -10,6 +10,11 @@
 
 - (void)connection: (NSURLConnection *)connection didReceiveData: (NSData *)data;
 
+- (void)connection:(NSURLConnection *)connection
+   didSendBodyData:(NSInteger)bytesWritten
+ totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+
 - (void)connection: (NSURLConnection *)connection didFailWithError: (NSError *)error;
 
 #pragma mark -
@@ -126,6 +131,16 @@
 
 - (void)connection: (NSURLConnection *)connection didReceiveData: (NSData *)data {
     [myData appendData: data];
+}
+
+- (void)connection:(NSURLConnection *)connection
+   didSendBodyData:(NSInteger)bytesWritten
+ totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
+{
+    if ([myDelegate respondsToSelector:@selector(request:didSendBodyData:)]) {
+        float percent = totalBytesWritten / (float)totalBytesExpectedToWrite;
+        [myDelegate request:myRequest didSendBodyData:percent];
+    }
 }
 
 - (void)connection: (NSURLConnection *)connection didFailWithError: (NSError *)error {

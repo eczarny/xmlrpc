@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033836831527905D00EF8E8A /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 033836811527905D00EF8E8A /* NSData+Base64.h */; };
+		033836841527905D00EF8E8A /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 033836811527905D00EF8E8A /* NSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		033836851527905D00EF8E8A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 033836821527905D00EF8E8A /* NSData+Base64.m */; };
+		033836861527905D00EF8E8A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 033836821527905D00EF8E8A /* NSData+Base64.m */; };
+		0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */; };
+		0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */; };
 		07075BAE10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */; };
 		0799AF5E0F67266400B71B22 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0799AF5D0F67266400B71B22 /* SenTestingKit.framework */; };
 		07A0A9071016A51000CEE3C7 /* EmptyBooleanTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9021016A51000CEE3C7 /* EmptyBooleanTestCase.xml */; };
@@ -14,15 +20,27 @@
 		07A0A9091016A51000CEE3C7 /* EmptyDoubleTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9041016A51000CEE3C7 /* EmptyDoubleTestCase.xml */; };
 		07A0A90A1016A51000CEE3C7 /* EmptyIntegerTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9051016A51000CEE3C7 /* EmptyIntegerTestCase.xml */; };
 		07A0A90B1016A51000CEE3C7 /* EmptyStringTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07A0A9061016A51000CEE3C7 /* EmptyStringTestCase.xml */; };
+		07B0C6070E33A659006453B4 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F80E33A659006453B4 /* NSStringAdditions.h */; };
+		07B0C6080E33A659006453B4 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F90E33A659006453B4 /* NSStringAdditions.m */; };
+		07B0C6090E33A659006453B4 /* XMLRPC.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FA0E33A659006453B4 /* XMLRPC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B0C60A0E33A659006453B4 /* XMLRPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FB0E33A659006453B4 /* XMLRPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B0C60B0E33A659006453B4 /* XMLRPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5FC0E33A659006453B4 /* XMLRPCConnection.m */; };
+		07B0C60E0E33A659006453B4 /* XMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5FF0E33A659006453B4 /* XMLRPCEncoder.h */; };
+		07B0C60F0E33A659006453B4 /* XMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6000E33A659006453B4 /* XMLRPCEncoder.m */; };
+		07B0C6100E33A659006453B4 /* XMLRPCRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6010E33A659006453B4 /* XMLRPCRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B0C6110E33A659006453B4 /* XMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6020E33A659006453B4 /* XMLRPCRequest.m */; };
+		07B0C6120E33A659006453B4 /* XMLRPCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6030E33A659006453B4 /* XMLRPCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B0C6130E33A659006453B4 /* XMLRPCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C6040E33A659006453B4 /* XMLRPCResponse.m */; };
+		07B0C6170E33A672006453B4 /* XMLRPC.pch in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C6160E33A672006453B4 /* XMLRPC.pch */; };
 		07B52BE7101004670015AD8B /* SimpleArrayTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07B52BE5101004670015AD8B /* SimpleArrayTestCase.xml */; };
 		07B52BE8101004670015AD8B /* SimpleStructTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07B52BE6101004670015AD8B /* SimpleStructTestCase.xml */; };
 		07B52BEA101004810015AD8B /* TestCases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B52BE9101004810015AD8B /* TestCases.plist */; };
 		07B52C03101008670015AD8B /* XMLRPCParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B52C02101008670015AD8B /* XMLRPCParserTest.m */; };
 		07BB09891316B65A00E1911C /* DefaultTypeTestCase.xml in Resources */ = {isa = PBXBuildFile; fileRef = 07BB09881316B65A00E1911C /* DefaultTypeTestCase.xml */; };
 		07E761001011788B00E9BDEE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
-		2DCADEDB1529E24300B47A4F /* XMLRPCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		903B0DC012F7581200BD6E09 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F60E33A659006453B4 /* NSDataAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		903B0DC112F7581200BD6E09 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F70E33A659006453B4 /* NSDataAdditions.m */; };
+		07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */; };
+		07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EF453A0E721A5D009F2708 /* XMLRPCEventBasedParser.m */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		903B0DC212F7581200BD6E09 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B0C5F80E33A659006453B4 /* NSStringAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		903B0DC312F7581200BD6E09 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C5F90E33A659006453B4 /* NSStringAdditions.m */; };
 		903B0DC412F7581200BD6E09 /* XMLRPCConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07452BE20E469C9000A57686 /* XMLRPCConnectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033836811527905D00EF8E8A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		033836821527905D00EF8E8A /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		0707047610114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPCEventBasedParserDelegate.h; sourceTree = "<group>"; };
 		0707047710114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLRPCEventBasedParserDelegate.m; sourceTree = "<group>"; };
 		07075BAD10C5FE3800589A27 /* AlternativeDateFormatsTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AlternativeDateFormatsTestCase.xml; path = "Resources/Test Cases/AlternativeDateFormatsTestCase.xml"; sourceTree = "<group>"; };
@@ -70,8 +90,6 @@
 		07A0A9041016A51000CEE3C7 /* EmptyDoubleTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = EmptyDoubleTestCase.xml; path = "Resources/Test Cases/EmptyDoubleTestCase.xml"; sourceTree = "<group>"; };
 		07A0A9051016A51000CEE3C7 /* EmptyIntegerTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = EmptyIntegerTestCase.xml; path = "Resources/Test Cases/EmptyIntegerTestCase.xml"; sourceTree = "<group>"; };
 		07A0A9061016A51000CEE3C7 /* EmptyStringTestCase.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = EmptyStringTestCase.xml; path = "Resources/Test Cases/EmptyStringTestCase.xml"; sourceTree = "<group>"; };
-		07B0C5F60E33A659006453B4 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		07B0C5F70E33A659006453B4 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		07B0C5F80E33A659006453B4 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
 		07B0C5F90E33A659006453B4 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
 		07B0C5FA0E33A659006453B4 /* XMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLRPC.h; sourceTree = "<group>"; };
@@ -184,8 +202,8 @@
 		07B0C6140E33A65E006453B4 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				07B0C5F60E33A659006453B4 /* NSDataAdditions.h */,
-				07B0C5F70E33A659006453B4 /* NSDataAdditions.m */,
+				033836811527905D00EF8E8A /* NSData+Base64.h */,
+				033836821527905D00EF8E8A /* NSData+Base64.m */,
 				07B0C5F80E33A659006453B4 /* NSStringAdditions.h */,
 				07B0C5F90E33A659006453B4 /* NSStringAdditions.m */,
 			);
@@ -305,11 +323,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B0C6070E33A659006453B4 /* NSStringAdditions.h in Headers */,
+				07B0C6090E33A659006453B4 /* XMLRPC.h in Headers */,
+				07B0C6170E33A672006453B4 /* XMLRPC.pch in Headers */,
+				07B0C60A0E33A659006453B4 /* XMLRPCConnection.h in Headers */,
+				07452BE30E469C9000A57686 /* XMLRPCConnectionDelegate.h in Headers */,
+				075137FB0E429E560019E4F6 /* XMLRPCConnectionManager.h in Headers */,
+				07B0C60E0E33A659006453B4 /* XMLRPCEncoder.h in Headers */,
+				07EF453B0E721A5D009F2708 /* XMLRPCEventBasedParser.h in Headers */,
+				0707047810114B9400CB7702 /* XMLRPCEventBasedParserDelegate.h in Headers */,
+				07B0C6100E33A659006453B4 /* XMLRPCRequest.h in Headers */,
+				07B0C6120E33A659006453B4 /* XMLRPCResponse.h in Headers */,
+				033836831527905D00EF8E8A /* NSData+Base64.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		903B0DB212F7574800BD6E09 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903B0DC012F7581200BD6E09 /* NSDataAdditions.h in Headers */,
 				903B0DC212F7581200BD6E09 /* NSStringAdditions.h in Headers */,
 				903B0DC412F7581200BD6E09 /* XMLRPCConnectionDelegate.h in Headers */,
 				903B0DC512F7581200BD6E09 /* XMLRPC.h in Headers */,
@@ -322,6 +358,7 @@
 				903B0DD012F7581200BD6E09 /* XMLRPCRequest.h in Headers */,
 				903B0DD212F7581200BD6E09 /* XMLRPCResponse.h in Headers */,
 				903B0DD412F7581F00BD6E09 /* XMLRPC.pch in Headers */,
+				033836841527905D00EF8E8A /* NSData+Base64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,11 +489,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B0C6080E33A659006453B4 /* NSStringAdditions.m in Sources */,
+				07B0C60B0E33A659006453B4 /* XMLRPCConnection.m in Sources */,
+				075137FC0E429E560019E4F6 /* XMLRPCConnectionManager.m in Sources */,
+				07B0C60F0E33A659006453B4 /* XMLRPCEncoder.m in Sources */,
+				07EF453C0E721A5D009F2708 /* XMLRPCEventBasedParser.m in Sources */,
+				0707047910114B9400CB7702 /* XMLRPCEventBasedParserDelegate.m in Sources */,
+				07B0C6110E33A659006453B4 /* XMLRPCRequest.m in Sources */,
+				07B0C6130E33A659006453B4 /* XMLRPCResponse.m in Sources */,
+				033836851527905D00EF8E8A /* NSData+Base64.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		903B0DB312F7574800BD6E09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903B0DC112F7581200BD6E09 /* NSDataAdditions.m in Sources */,
 				903B0DC312F7581200BD6E09 /* NSStringAdditions.m in Sources */,
 				903B0DC712F7581200BD6E09 /* XMLRPCConnection.m in Sources */,
 				903B0DC912F7581200BD6E09 /* XMLRPCConnectionManager.m in Sources */,
@@ -465,6 +517,7 @@
 				903B0DCF12F7581200BD6E09 /* XMLRPCEventBasedParserDelegate.m in Sources */,
 				903B0DD112F7581200BD6E09 /* XMLRPCRequest.m in Sources */,
 				903B0DD312F7581200BD6E09 /* XMLRPCResponse.m in Sources */,
+				033836861527905D00EF8E8A /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

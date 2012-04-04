@@ -4,7 +4,7 @@
 
 @interface XMLRPCRequest : NSObject {
     NSMutableURLRequest *myRequest;
-    id <XMLRPCEncoder> myXMLEncoder;
+    id<XMLRPCEncoder> myXMLEncoder;
 }
 
 - (id)initWithURL: (NSURL *)URL;
@@ -22,7 +22,7 @@
 - (NSString *)userAgent;
 
 #pragma mark -
-- (void)setEncoder: (id <XMLRPCEncoder>) encoder;
+- (void)setEncoder: (id<XMLRPCEncoder>) encoder;
 
 - (void)setMethod: (NSString *)method;
 

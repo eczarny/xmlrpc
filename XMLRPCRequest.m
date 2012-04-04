@@ -4,7 +4,7 @@
 
 @implementation XMLRPCRequest
 
-- (id)initWithURL: (NSURL *)URL {
+- (id)initWithURL: (NSURL *)URL withEncoder: (id<XMLRPCEncoder>)encoder {
     self = [super init];
     if (self) {
         if (URL) {
@@ -13,9 +13,15 @@
             myRequest = [[NSMutableURLRequest alloc] init];
         }
         
-        myXMLEncoder = [[XMLRPCDefaultEncoder alloc] init];
+        myXMLEncoder = encoder;
     }
     
+    return self;
+}
+
+- (id)initWithURL: (NSURL *)URL {
+    XMLRPCDefaultEncoder *encoder = [XMLRPCDefaultEncoder alloc];
+    [self initWithURL:URL withEncoder:encoder];
     return self;
 }
 

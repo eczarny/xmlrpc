@@ -20,9 +20,7 @@
 }
 
 - (id)initWithURL: (NSURL *)URL {
-    XMLRPCDefaultEncoder *encoder = [XMLRPCDefaultEncoder alloc];
-    [self initWithURL:URL withEncoder:encoder];
-    return self;
+    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
 }
 
 #pragma mark -

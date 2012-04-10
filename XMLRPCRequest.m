@@ -1,9 +1,10 @@
 #import "XMLRPCRequest.h"
 #import "XMLRPCEncoder.h"
+#import "XMLRPCDefaultEncoder.h"
 
 @implementation XMLRPCRequest
 
-- (id)initWithURL: (NSURL *)URL {
+- (id)initWithURL: (NSURL *)URL withEncoder: (id<XMLRPCEncoder>)encoder {
     self = [super init];
     if (self) {
         if (URL) {
@@ -12,10 +13,14 @@
             myRequest = [[NSMutableURLRequest alloc] init];
         }
         
-        myXMLEncoder = [[XMLRPCEncoder alloc] init];
+        myXMLEncoder = encoder;
     }
     
     return self;
+}
+
+- (id)initWithURL: (NSURL *)URL {
+    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
 }
 
 #pragma mark -
@@ -43,6 +48,15 @@
 }
 
 #pragma mark -
+
+- (void)setEncoder:(id<XMLRPCEncoder>)encoder {
+    //Copy the old method and parameters to the new encoder.
+    NSString *method = [myXMLEncoder method];
+    NSArray *parameters = [myXMLEncoder parameters];
+    [myXMLEncoder release];
+    myXMLEncoder = [encoder retain];
+    [myXMLEncoder setMethod:method withParameters:parameters];
+}
 
 - (void)setMethod: (NSString *)method {
     [myXMLEncoder setMethod: method withParameters: nil];

@@ -13,14 +13,14 @@
             myRequest = [[NSMutableURLRequest alloc] init];
         }
         
-        myXMLEncoder = encoder;
+        myXMLEncoder = [encoder retain];
     }
     
     return self;
 }
 
 - (id)initWithURL: (NSURL *)URL {
-    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
+    return [self initWithURL:URL withEncoder:[[[XMLRPCDefaultEncoder alloc] init] autorelease]];
 }
 
 #pragma mark -

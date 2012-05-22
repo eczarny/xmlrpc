@@ -143,6 +143,7 @@
 #pragma mark -
 
 - (void)setConnection:(XMLRPCConnection *)connection {
+    [myConnection release];
     myConnection = connection;
     [myConnection retain];
 }

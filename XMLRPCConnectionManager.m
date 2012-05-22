@@ -49,6 +49,8 @@ static XMLRPCConnectionManager *sharedInstance = nil;
     
     [myConnections setObject: newConnection forKey: identifier];
     
+    [request setConnection:newConnection];
+    
     [newConnection release];
     
     return identifier;

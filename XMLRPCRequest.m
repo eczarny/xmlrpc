@@ -142,9 +142,23 @@
 
 #pragma mark -
 
+- (void)setConnection:(XMLRPCConnection *)connection {
+    [myConnection release];
+    myConnection = connection;
+    [myConnection retain];
+}
+
+- (XMLRPCConnection *)connection {
+    return myConnection;
+}
+
+
+#pragma mark -
+
 - (void)dealloc {
     [myRequest release];
     [myXMLEncoder release];
+    [myConnection release];
     
     [super dealloc];
 }

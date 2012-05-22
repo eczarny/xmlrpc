@@ -1,8 +1,10 @@
 #import <Foundation/Foundation.h>
 
 #import "XMlRPCEncoder.h"
+#import "XMLRPCConnection.h"
 
 @interface XMLRPCRequest : NSObject {
+    XMLRPCConnection *myConnection;
     NSMutableURLRequest *myRequest;
     id<XMLRPCEncoder> myXMLEncoder;
 }
@@ -43,6 +45,12 @@
 #pragma mark -
 
 - (NSURLRequest *)request;
+
+#pragma mark -
+
+- (void)setConnection:(XMLRPCConnection *)connection;
+
+- (XMLRPCConnection *)connection;
 
 #pragma mark -
 

@@ -13,17 +13,23 @@
         XMLRPCEventBasedParser *parser = [[XMLRPCEventBasedParser alloc] initWithData: data];
         
         if (!parser) {
+#if ! __has_feature(objc_arc)
             [self release];
-            
+#endif
             return nil;
         }
     
         myBody = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-        myObject = [[parser parse] retain];
+        myObject = [parser parse];
+#if ! __has_feature(objc_arc)
+        [myObject retain];
+#endif
         
         isFault = [parser isFault];
         
+#if ! __has_feature(objc_arc)
         [parser release];
+#endif
     }
     
     return self;
@@ -65,11 +71,27 @@
 
 #pragma mark -
 
+- (NSString *)description {
+	NSMutableString	*msg = [NSMutableString stringWithCapacity:128];
+	[msg appendFormat:@"[body=%@", myBody];
+	if (isFault) {
+		[msg appendFormat:@", fault[%@]='%@'", [self faultCode], [self faultString]];
+	} else {
+		[msg appendFormat:@", obj=%@", myObject];
+	}
+	[msg appendString:@"]"];
+	return msg;
+}
+
+#pragma mark -
+
 - (void)dealloc {
+#if ! __has_feature(objc_arc)
     [myBody release];
     [myObject release];
     
     [super dealloc];
+#endif
 }
 
 @end

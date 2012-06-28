@@ -49,9 +49,10 @@
 #pragma mark -
 
 - (void)setParent: (XMLRPCEventBasedParserDelegate *)parent {
+#if ! __has_feature(objc_arc)
     [parent retain];
-    
     [myParent release];
+#endif
     
     myParent = parent;
 }
@@ -73,9 +74,10 @@
 #pragma mark -
 
 - (void)setElementKey: (NSString *)elementKey {
+#if ! __has_feature(objc_arc)
     [elementKey retain];
-    
     [myElementKey release];
+#endif
     
     myElementKey = elementKey;
 }
@@ -87,9 +89,10 @@
 #pragma mark -
 
 - (void)setElementValue: (id)elementValue {
+#if ! __has_feature(objc_arc)
     [elementValue retain];
-    
     [myElementValue release];
+#endif
     
     myElementValue = elementValue;
 }
@@ -101,11 +104,13 @@
 #pragma mark -
 
 - (void)dealloc {
+#if ! __has_feature(objc_arc)
     [myChildren release];
     [myElementKey release];
     [myElementValue release];
     
     [super dealloc];
+#endif
 }
 
 @end
@@ -127,9 +132,9 @@
         [myChildren addObject: parserDelegate];
         
         [parser setDelegate: parserDelegate];
-        
+#if ! __has_feature(objc_arc)
         [parserDelegate release];
-        
+#endif
         return;
     }
     
@@ -137,17 +142,17 @@
         NSMutableArray *array = [[NSMutableArray alloc] init];
         
         [self setElementValue: array];
-        
+#if ! __has_feature(objc_arc)
         [array release];
-        
+#endif
         [self setElementType: XMLRPCElementTypeArray];
     } else if ([element isEqualToString: @"struct"]) {
         NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
         
         [self setElementValue: dictionary];
-        
+#if ! __has_feature(objc_arc)
         [dictionary release];
-        
+#endif
         [self setElementType: XMLRPCElementTypeDictionary];
     } else if ([element isEqualToString: @"int"] || [element isEqualToString: @"i4"]) {
         [self setElementType: XMLRPCElementTypeInteger];
@@ -170,49 +175,49 @@
         
         if ((myElementType != XMLRPCElementTypeArray) && ![self isDictionaryElementType: myElementType]) {
             elementValue = [self parseString: myElementValue];
-            
+#if ! __has_feature(objc_arc)
             [myElementValue release];
-            
+#endif
             myElementValue = nil;
         }
         
         switch (myElementType) {
             case XMLRPCElementTypeInteger:
                 myElementValue = [self parseInteger: elementValue];
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             case XMLRPCElementTypeDouble:
                 myElementValue = [self parseDouble: elementValue];
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             case XMLRPCElementTypeBoolean:
                 myElementValue = [self parseBoolean: elementValue];
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             case XMLRPCElementTypeString:
             case XMLRPCElementTypeName:
                 myElementValue = elementValue;
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             case XMLRPCElementTypeDate:
                 myElementValue = [self parseDate: elementValue];
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             case XMLRPCElementTypeData:
                 myElementValue = [self parseData: elementValue];
-                
+#if ! __has_feature(objc_arc)
                 [myElementValue retain];
-                
+#endif
                 break;
             default:
                 break;
@@ -296,9 +301,9 @@
     [dateFormatter setDateFormat: format];
     
     result = [dateFormatter dateFromString: dateString];
-    
+#if ! __has_feature(objc_arc)
     [dateFormatter release];
-    
+#endif
     return result;
 }
 

@@ -50,10 +50,12 @@
 #pragma mark -
 
 - (void)dealloc {
+#if ! __has_feature(objc_arc)
     [myParser release];
     [myParserDelegate release];
     
     [super dealloc];
+#endif
 }
 
 @end

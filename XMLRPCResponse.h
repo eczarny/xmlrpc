@@ -26,4 +26,8 @@
 
 - (NSString *)body;
 
+#pragma mark -
+
+- (NSString *)description;
+
 @end

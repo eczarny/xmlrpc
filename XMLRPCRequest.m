@@ -13,14 +13,21 @@
             myRequest = [[NSMutableURLRequest alloc] init];
         }
         
-        myXMLEncoder = [encoder retain];
+        myXMLEncoder = encoder;
+#if ! __has_feature(objc_arc)
+        [myXMLEncoder retain];
+#endif
     }
     
     return self;
 }
 
 - (id)initWithURL: (NSURL *)URL {
+#if ! __has_feature(objc_arc)
     return [self initWithURL:URL withEncoder:[[[XMLRPCDefaultEncoder alloc] init] autorelease]];
+#else
+    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
+#endif
 }
 
 #pragma mark -
@@ -53,8 +60,12 @@
     //Copy the old method and parameters to the new encoder.
     NSString *method = [myXMLEncoder method];
     NSArray *parameters = [myXMLEncoder parameters];
+#if ! __has_feature(objc_arc)
     [myXMLEncoder release];
     myXMLEncoder = [encoder retain];
+#else
+    myXMLEncoder = encoder;
+#endif
     [myXMLEncoder setMethod:method withParameters:parameters];
 }
 
@@ -143,10 +154,12 @@
 #pragma mark -
 
 - (void)dealloc {
+#if ! __has_feature(objc_arc)
     [myRequest release];
     [myXMLEncoder release];
     
     [super dealloc];
+#endif
 }
 
 @end

@@ -45,11 +45,17 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 - (NSString *)spawnConnectionWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate {
     XMLRPCConnection *newConnection = [[XMLRPCConnection alloc] initWithXMLRPCRequest: request delegate: delegate manager: self];
+#if ! __has_feature(objc_arc)
     NSString *identifier = [[[newConnection identifier] retain] autorelease];
+#else
+    NSString *identifier = [newConnection identifier];
+#endif
     
     [myConnections setObject: newConnection forKey: identifier];
     
+#if ! __has_feature(objc_arc)
     [newConnection release];
+#endif
     
     return identifier;
 }
@@ -100,10 +106,10 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 - (void)dealloc {
     [self closeConnections];
-    
+#if ! __has_feature(objc_arc)
     [myConnections release];
-    
     [super dealloc];
+#endif
 }
 
 @end

@@ -300,12 +300,12 @@ char *NewBase64Encode(
 	char *outputBuffer =
 		NewBase64Encode([self bytes], [self length], true, &outputLength);
 	
-	NSString *result =
-		[[[NSString alloc]
-			initWithBytes:outputBuffer
-			length:outputLength
-			encoding:NSASCIIStringEncoding]
-		autorelease];
+	NSString *result =[[NSString alloc] initWithBytes:outputBuffer
+											   length:outputLength
+											 encoding:NSASCIIStringEncoding];
+#if ! __has_feature(objc_arc)
+	[result autorelease];
+#endif
 	free(outputBuffer);
 	return result;
 }

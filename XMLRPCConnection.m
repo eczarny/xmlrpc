@@ -51,6 +51,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
         
 #if ! __has_feature(objc_arc)
         myDelegate = [delegate retain];
+#else
+        myDelegate = delegate;
 #endif
         
         if (myConnection) {

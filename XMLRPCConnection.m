@@ -4,6 +4,8 @@
 #import "XMLRPCResponse.h"
 #import "NSStringAdditions.h"
 
+static NSOperationQueue *parsingQueue;
+
 @interface XMLRPCConnection (XMLRPCConnectionPrivate)
 
 - (void)connection: (NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
@@ -26,6 +28,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 - (void)connection: (NSURLConnection *)connection didCancelAuthenticationChallenge: (NSURLAuthenticationChallenge *)challenge;
 
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection;
+
+#pragma mark -
+
++ (NSOperationQueue *)parsingQueue;
 
 @end
 
@@ -198,17 +204,36 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection {
     if (myData && ([myData length] > 0)) {
 #if ! __has_feature(objc_arc)
-        XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
-        XMLRPCRequest *request = [[myRequest retain] autorelease];
+        NSBlockOperation *parsingOp = [NSBlockOperation blockOperationWithBlock:^{
+            XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
+            XMLRPCRequest *request = [[myRequest retain] autorelease];
+
+            [[NSOperationQueue mainQueue] addOperation:[NSBlockOperation blockOperationWithBlock:^{
+               [myDelegate request: request didReceiveResponse: response]; 
+            }]];
+        }];
+        [[XMLRPCConnection parsingQueue] addOperation:parsingOp];
 #else
-        XMLRPCResponse *response = [[XMLRPCResponse alloc] initWithData: myData];
-        XMLRPCRequest *request = myRequest;
+        NSBlockOperation *parsingOp = [NSBlockOperation blockOperationWithBlock:^{
+            XMLRPCResponse *response = [[XMLRPCResponse alloc] initWithData: myData];
+            XMLRPCRequest *request = myRequest;
+
+            [[NSOperationQueue mainQueue] addOperation:[NSBlockOperation blockOperationWithBlock:^{
+                [myDelegate request: request didReceiveResponse: response]; 
+            }]];
+        }];
+        [[XMLRPCConnection parsingQueue] addOperation:parsingOp];
 #endif
-        
-        [myDelegate request: request didReceiveResponse: response];
     }
-    
-    [myManager closeConnectionForIdentifier: myIdentifier];
+}
+
+#pragma mark -
+
++ (NSOperationQueue *)parsingQueue {
+    if (parsingQueue == nil) {
+        parsingQueue = [[NSOperationQueue alloc] init];
+    }
+    return parsingQueue;
 }
 
 @end

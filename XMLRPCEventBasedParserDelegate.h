@@ -19,7 +19,7 @@ typedef enum {
 #if !__has_feature(__objc_arc)
     XMLRPCEventBasedParserDelegate *myParent;
 #else
-    // without ARC this reference is effectively unretained so don't use strong reference here
+    // Without ARC this reference is effectively unretained so don't use strong reference here.
     __unsafe_unretained XMLRPCEventBasedParserDelegate *myParent;
 #endif
     NSMutableSet *myChildren;

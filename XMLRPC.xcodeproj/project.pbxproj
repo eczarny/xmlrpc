@@ -289,12 +289,12 @@
 			children = (
 				07B0C6140E33A65E006453B4 /* Additions */,
 				07452BDC0E469C6900A57686 /* Delegates */,
+				2DAF1E7E15CAB471009305B2 /* Protocols */,
 				07B0C5FA0E33A659006453B4 /* XMLRPC.h */,
 				07B0C5FB0E33A659006453B4 /* XMLRPCConnection.h */,
 				07B0C5FC0E33A659006453B4 /* XMLRPCConnection.m */,
 				075137F90E429E560019E4F6 /* XMLRPCConnectionManager.h */,
 				075137FA0E429E560019E4F6 /* XMLRPCConnectionManager.m */,
-				2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */,
 				07B0C5FF0E33A659006453B4 /* XMLRPCDefaultEncoder.h */,
 				07B0C6000E33A659006453B4 /* XMLRPCDefaultEncoder.m */,
 				07EF45390E721A5D009F2708 /* XMLRPCEventBasedParser.h */,
@@ -326,6 +326,14 @@
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2DAF1E7E15CAB471009305B2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2DCADED91529E06900B47A4F /* XMLRPCEncoder.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -445,7 +453,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "XMLRPC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -609,6 +617,7 @@
 			baseConfigurationReference = 0799AF0B0F67227F00B71B22 /* XMLRPCUnitTestsDevelopment.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -622,6 +631,7 @@
 			baseConfigurationReference = 0799AF0C0F67227F00B71B22 /* XMLRPCUnitTestsRelease.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -635,6 +645,7 @@
 			baseConfigurationReference = 0799AF100F6722D600B71B22 /* XMLRPCDevelopment.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				VERSION_INFO_FILE = "";
 			};
 			name = Development;
@@ -644,6 +655,7 @@
 			baseConfigurationReference = 0799AF110F6722D600B71B22 /* XMLRPCRelease.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				VERSION_INFO_FILE = "";
 			};
 			name = Release;

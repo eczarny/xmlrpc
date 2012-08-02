@@ -12,10 +12,7 @@ static NSOperationQueue *parsingQueue;
 
 - (void)connection: (NSURLConnection *)connection didReceiveData: (NSData *)data;
 
-- (void)connection:(NSURLConnection *)connection
-   didSendBodyData:(NSInteger)bytesWritten
- totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+- (void)connection: (NSURLConnection *)connection didSendBodyData: (NSInteger)bytesWritten totalBytesWritten: (NSInteger)totalBytesWritten totalBytesExpectedToWrite: (NSInteger)totalBytesExpectedToWrite;
 
 - (void)connection: (NSURLConnection *)connection didFailWithError: (NSError *)error;
 
@@ -163,12 +160,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
     [myData appendData: data];
 }
 
-- (void)connection:(NSURLConnection *)connection
-   didSendBodyData:(NSInteger)bytesWritten
- totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
-{
-    if ([myDelegate respondsToSelector:@selector(request:didSendBodyData:)]) {
+- (void)connection: (NSURLConnection *)connection didSendBodyData: (NSInteger)bytesWritten totalBytesWritten: (NSInteger)totalBytesWritten totalBytesExpectedToWrite: (NSInteger)totalBytesExpectedToWrite {
+    if ([myDelegate respondsToSelector: @selector(request:didSendBodyData:)]) {
         float percent = totalBytesWritten / (float)totalBytesExpectedToWrite;
+        
         [myDelegate request:myRequest didSendBodyData:percent];
     }
 }
@@ -203,27 +198,29 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
 
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection {
     if (myData && ([myData length] > 0)) {
+        NSBlockOperation *parsingOperation;
+        
 #if ! __has_feature(objc_arc)
-        NSBlockOperation *parsingOp = [NSBlockOperation blockOperationWithBlock:^{
+        parsingOperation = [NSBlockOperation blockOperationWithBlock:^{
             XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
             XMLRPCRequest *request = [[myRequest retain] autorelease];
 
-            [[NSOperationQueue mainQueue] addOperation:[NSBlockOperation blockOperationWithBlock:^{
+            [[NSOperationQueue mainQueue] addOperation: [NSBlockOperation blockOperationWithBlock:^{
                [myDelegate request: request didReceiveResponse: response]; 
             }]];
         }];
-        [[XMLRPCConnection parsingQueue] addOperation:parsingOp];
 #else
-        NSBlockOperation *parsingOp = [NSBlockOperation blockOperationWithBlock:^{
+        parsingOperation = [NSBlockOperation blockOperationWithBlock:^{
             XMLRPCResponse *response = [[XMLRPCResponse alloc] initWithData: myData];
             XMLRPCRequest *request = myRequest;
 
-            [[NSOperationQueue mainQueue] addOperation:[NSBlockOperation blockOperationWithBlock:^{
+            [[NSOperationQueue mainQueue] addOperation: [NSBlockOperation blockOperationWithBlock:^{
                 [myDelegate request: request didReceiveResponse: response]; 
             }]];
         }];
-        [[XMLRPCConnection parsingQueue] addOperation:parsingOp];
 #endif
+        
+        [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
     }
 }
 
@@ -233,6 +230,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
     if (parsingQueue == nil) {
         parsingQueue = [[NSOperationQueue alloc] init];
     }
+    
     return parsingQueue;
 }
 

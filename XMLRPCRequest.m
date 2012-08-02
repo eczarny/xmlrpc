@@ -57,16 +57,17 @@
 #pragma mark -
 
 - (void)setEncoder:(id<XMLRPCEncoder>)encoder {
-    //Copy the old method and parameters to the new encoder.
     NSString *method = [myXMLEncoder method];
     NSArray *parameters = [myXMLEncoder parameters];
 #if ! __has_feature(objc_arc)
     [myXMLEncoder release];
+    
     myXMLEncoder = [encoder retain];
 #else
     myXMLEncoder = encoder;
 #endif
-    [myXMLEncoder setMethod:method withParameters:parameters];
+    
+    [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
 - (void)setMethod: (NSString *)method {
@@ -135,8 +136,9 @@
     
     if (![self userAgent]) {
       NSString *userAgent = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserAgent"];
+        
       if (userAgent) {
-        [self setUserAgent:userAgent];
+        [self setUserAgent: userAgent];
       }
     }
     

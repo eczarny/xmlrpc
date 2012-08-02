@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#import "XMlRPCEncoder.h"
+#import "XMLRPCEncoder.h"
 
 @interface XMLRPCRequest : NSObject {
     NSMutableURLRequest *myRequest;

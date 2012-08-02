@@ -37,7 +37,7 @@
     self = [super init];
     if (self) {
         myParent = parent;
-        myChildren = [[NSMutableArray alloc] initWithCapacity: 1];
+        myChildren = [[NSMutableSet alloc] initWithCapacity: 1];
         myElementType = XMLRPCElementTypeString;
         myElementKey = nil;
         myElementValue = [[NSMutableString alloc] init];
@@ -228,6 +228,12 @@
         }
         
         [parser setDelegate: myParent];
+
+        if (myParent) {
+            [myParent->myChildren removeObject:self];
+            // set it to nil explicitly since it's not __weak but __unsafe_unretained
+            myParent = nil;
+        }
     }
 }
 

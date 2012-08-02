@@ -16,8 +16,13 @@ typedef enum {
 #pragma mark -
 
 @interface XMLRPCEventBasedParserDelegate : NSObject<NSXMLParserDelegate> {
+#if !__has_feature(__objc_arc)
     XMLRPCEventBasedParserDelegate *myParent;
-    NSMutableArray *myChildren;
+#else
+    // without ARC this reference is effectively unretained so don't use strong reference here
+    __unsafe_unretained XMLRPCEventBasedParserDelegate *myParent;
+#endif
+    NSMutableSet *myChildren;
     XMLRPCElementType myElementType;
     NSString *myElementKey;
     id myElementValue;

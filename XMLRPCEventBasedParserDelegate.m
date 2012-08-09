@@ -230,8 +230,9 @@
         [parser setDelegate: myParent];
 
         if (myParent) {
-            [myParent->myChildren removeObject:self];
-            // set it to nil explicitly since it's not __weak but __unsafe_unretained
+            [myParent->myChildren removeObject: self];
+            
+            // Set it to nil explicitly since it's not __weak but __unsafe_unretained.
             myParent = nil;
         }
     }

@@ -5,4 +5,5 @@
     NSString *myMethod;
     NSArray *myParameters;
 }
+
 @end

@@ -22,6 +22,7 @@
 - (NSString *)userAgent;
 
 #pragma mark -
+
 - (void)setEncoder: (id<XMLRPCEncoder>) encoder;
 
 - (void)setMethod: (NSString *)method;

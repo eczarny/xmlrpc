@@ -39,8 +39,7 @@
 @implementation XMLRPCDefaultEncoder
 
 - (id)init {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         myMethod = [[NSString alloc] init];
         myParameters = [[NSArray alloc] init];
     }
@@ -152,7 +151,11 @@
         return [self encodeArray: object];
     } else if ([object isKindOfClass: [NSDictionary class]]) {
         return [self encodeDictionary: object];
+#if ! __has_feature(objc_arc)
+    } else if (((CFBooleanRef)object == kCFBooleanTrue) || ((CFBooleanRef)object == kCFBooleanFalse)) {
+#else
     } else if (((__bridge_retained CFBooleanRef)object == kCFBooleanTrue) || ((__bridge_retained CFBooleanRef)object == kCFBooleanFalse)) {
+#endif
         return [self encodeBoolean: (CFBooleanRef)object];
     } else if ([object isKindOfClass: [NSNumber class]]) {
         return [self encodeNumber: object];

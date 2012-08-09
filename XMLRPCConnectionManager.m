@@ -106,8 +106,10 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 - (void)dealloc {
     [self closeConnections];
+    
 #if ! __has_feature(objc_arc)
     [myConnections release];
+    
     [super dealloc];
 #endif
 }

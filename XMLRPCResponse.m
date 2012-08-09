@@ -72,15 +72,19 @@
 #pragma mark -
 
 - (NSString *)description {
-	NSMutableString	*msg = [NSMutableString stringWithCapacity:128];
-	[msg appendFormat:@"[body=%@", myBody];
+	NSMutableString	*result = [NSMutableString stringWithCapacity:128];
+    
+	[result appendFormat:@"[body=%@", myBody];
+    
 	if (isFault) {
-		[msg appendFormat:@", fault[%@]='%@'", [self faultCode], [self faultString]];
+		[result appendFormat:@", fault[%@]='%@'", [self faultCode], [self faultString]];
 	} else {
-		[msg appendFormat:@", obj=%@", myObject];
+		[result appendFormat:@", object=%@", myObject];
 	}
-	[msg appendString:@"]"];
-	return msg;
+    
+	[result appendString:@"]"];
+    
+	return result;
 }
 
 #pragma mark -

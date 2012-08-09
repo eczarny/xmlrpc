@@ -31,6 +31,8 @@
 
 - (void)setMethod: (NSString *)method withParameters: (NSArray *)parameters;
 
+- (void)setTimeoutInterval: (NSTimeInterval)timeout;
+
 #pragma mark -
 
 - (NSString *)method;

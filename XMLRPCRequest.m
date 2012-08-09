@@ -88,6 +88,11 @@
     [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
+- (void)setTimeoutInterval: (NSTimeInterval)timeout
+{
+    [myRequest setTimeoutInterval:timeout];
+}
+
 #pragma mark -
 
 - (NSString *)method {

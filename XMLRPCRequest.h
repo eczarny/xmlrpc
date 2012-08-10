@@ -5,6 +5,7 @@
 @interface XMLRPCRequest : NSObject {
     NSMutableURLRequest *myRequest;
     id<XMLRPCEncoder> myXMLEncoder;
+    NSTimeInterval myTimeout;
 }
 
 - (id)initWithURL: (NSURL *)URL;
@@ -38,6 +39,8 @@
 - (NSString *)method;
 
 - (NSArray *)parameters;
+
+- (NSTimeInterval)timeout;
 
 #pragma mark -
 

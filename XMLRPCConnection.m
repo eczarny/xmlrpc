@@ -28,6 +28,11 @@ static NSOperationQueue *parsingQueue;
 
 #pragma mark -
 
+- (void)timeoutExpired;
+- (void)invalidateTimer;
+
+#pragma mark -
+
 + (NSOperationQueue *)parsingQueue;
 
 @end
@@ -60,6 +65,11 @@ static NSOperationQueue *parsingQueue;
         
         if (myConnection) {
             NSLog(@"The connection, %@, has been established!", myIdentifier);
+
+            myTimeoutTimer = [NSTimer scheduledTimerWithTimeInterval:[myRequest timeout] target:self selector:@selector(timeoutExpired) userInfo:nil repeats:NO];
+#if ! __has_feature(objc_arc)
+            [myTimeoutTimer retain];
+#endif
         } else {
             NSLog(@"The connection, %@, could not be established!", myIdentifier);
 #if ! __has_feature(objc_arc)
@@ -129,6 +139,9 @@ static NSOperationQueue *parsingQueue;
     [myData release];
     [myConnection release];
     [myDelegate release];
+    if ([myTimeoutTimer isValid]) {
+        [self invalidateTimer];
+    }
     
     [super dealloc];
 #endif
@@ -174,9 +187,11 @@ static NSOperationQueue *parsingQueue;
 #else
     XMLRPCRequest *request = myRequest;
 #endif
-    
+
     NSLog(@"The connection, %@, failed with the following error: %@", myIdentifier, [error localizedDescription]);
-    
+
+    [self invalidateTimer];
+
     [myDelegate request: request didFailWithError: error];
     
     [myManager closeConnectionForIdentifier: myIdentifier];
@@ -197,9 +212,10 @@ static NSOperationQueue *parsingQueue;
 }
 
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection {
+    [self invalidateTimer];
     if (myData && ([myData length] > 0)) {
         NSBlockOperation *parsingOperation;
-        
+
 #if ! __has_feature(objc_arc)
         parsingOperation = [NSBlockOperation blockOperationWithBlock:^{
             XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
@@ -222,6 +238,31 @@ static NSOperationQueue *parsingQueue;
         
         [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
     }
+}
+
+#pragma mark -
+- (void)timeoutExpired
+{
+    [myConnection cancel];
+
+    //FIXME add some userinfo
+    NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:kCFURLErrorTimedOut userInfo:nil];
+
+    [myDelegate request:myRequest didFailWithError:error];
+
+#if ! __has_feature(objc_arc)
+    [myTimeoutTimer release];
+#endif
+    myTimeoutTimer = nil;
+}
+
+- (void)invalidateTimer
+{
+    [myTimeoutTimer invalidate];
+#if ! __has_feature(objc_arc)
+    [myTimeoutTimer release];
+#endif
+    myTimeoutTimer = nil;
 }
 
 #pragma mark -

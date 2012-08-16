@@ -10,7 +10,6 @@
     NSMutableData *myData;
     NSURLConnection *myConnection;
     id<XMLRPCConnectionDelegate> myDelegate;
-    NSTimer *myTimeoutTimer;
 }
 
 - (id)initWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate manager: (XMLRPCConnectionManager *)manager;

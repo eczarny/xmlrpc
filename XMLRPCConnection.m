@@ -66,10 +66,7 @@ static NSOperationQueue *parsingQueue;
         if (myConnection) {
             NSLog(@"The connection, %@, has been established!", myIdentifier);
 
-            myTimeoutTimer = [NSTimer scheduledTimerWithTimeInterval:[myRequest timeout] target:self selector:@selector(timeoutExpired) userInfo:nil repeats:NO];
-#if ! __has_feature(objc_arc)
-            [myTimeoutTimer retain];
-#endif
+            [self performSelector:@selector(timeoutExpired) withObject:nil afterDelay:[myRequest timeout]];
         } else {
             NSLog(@"The connection, %@, could not be established!", myIdentifier);
 #if ! __has_feature(objc_arc)
@@ -141,9 +138,6 @@ static NSOperationQueue *parsingQueue;
     [myData release];
     [myConnection release];
     [myDelegate release];
-    if ([myTimeoutTimer isValid]) {
-        [self invalidateTimer];
-    }
     
     [super dealloc];
 #endif
@@ -249,20 +243,11 @@ static NSOperationQueue *parsingQueue;
     NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:kCFURLErrorTimedOut userInfo:nil];
 
     [self connection:myConnection didFailWithError:error];
-
-#if ! __has_feature(objc_arc)
-    [myTimeoutTimer release];
-#endif
-    myTimeoutTimer = nil;
 }
 
 - (void)invalidateTimer
 {
-    [myTimeoutTimer invalidate];
-#if ! __has_feature(objc_arc)
-    [myTimeoutTimer release];
-#endif
-    myTimeoutTimer = nil;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeoutExpired) object:nil];
 }
 
 #pragma mark -

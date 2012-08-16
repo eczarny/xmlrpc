@@ -239,8 +239,14 @@ static NSOperationQueue *parsingQueue;
 #pragma mark -
 - (void)timeoutExpired
 {
-    //FIXME add some userinfo
-    NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:kCFURLErrorTimedOut userInfo:nil];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [myRequest URL], NSURLErrorFailingURLErrorKey,
+                              [[myRequest URL] absoluteString], NSURLErrorFailingURLStringErrorKey,
+                              //TODO not good to use hardcoded value for localized description
+                              @"The request timed out.", NSLocalizedDescriptionKey,
+                              nil];
+
+    NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:userInfo];
 
     [self connection:myConnection didFailWithError:error];
 }

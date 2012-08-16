@@ -2,7 +2,7 @@
 #import "XMLRPCEncoder.h"
 #import "XMLRPCDefaultEncoder.h"
 
-static const NSTimeInterval DEFAULT_TIMEOUT = 60.0;
+static const NSTimeInterval DEFAULT_TIMEOUT = 240;
 
 @implementation XMLRPCRequest
 

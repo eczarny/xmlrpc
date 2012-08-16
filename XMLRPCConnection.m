@@ -127,6 +127,8 @@ static NSOperationQueue *parsingQueue;
 
 - (void)cancel {
     [myConnection cancel];
+
+    [self invalidateTimer];
 }
 
 #pragma mark -
@@ -243,12 +245,10 @@ static NSOperationQueue *parsingQueue;
 #pragma mark -
 - (void)timeoutExpired
 {
-    [myConnection cancel];
-
     //FIXME add some userinfo
     NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:kCFURLErrorTimedOut userInfo:nil];
 
-    [myDelegate request:myRequest didFailWithError:error];
+    [self connection:myConnection didFailWithError:error];
 
 #if ! __has_feature(objc_arc)
     [myTimeoutTimer release];

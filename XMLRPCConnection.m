@@ -164,7 +164,7 @@ static NSOperationQueue *parsingQueue;
     if ([myDelegate respondsToSelector: @selector(request:didSendBodyData:)]) {
         float percent = totalBytesWritten / (float)totalBytesExpectedToWrite;
         
-        [myDelegate request:myRequest didSendBodyData:percent];
+        [myDelegate request: myRequest didSendBodyData: percent];
     }
 }
 

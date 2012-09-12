@@ -2,7 +2,11 @@
 
 @protocol XMLRPCEncoder <NSObject>
 
-- (NSString *)encode;
+- (id)encode;
+
+#pragma mark -
+
+- (NSNumber *)encodedLength;
 
 #pragma mark -
 

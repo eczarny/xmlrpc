@@ -1,6 +1,7 @@
 #import "XMLRPCRequest.h"
 #import "XMLRPCEncoder.h"
 #import "XMLRPCDefaultEncoder.h"
+#import "XMLRPCStreamingEncoder.h"
 
 @implementation XMLRPCRequest
 
@@ -24,9 +25,9 @@
 
 - (id)initWithURL: (NSURL *)URL {
 #if ! __has_feature(objc_arc)
-    return [self initWithURL:URL withEncoder:[[[XMLRPCDefaultEncoder alloc] init] autorelease]];
+    return [self initWithURL: URL withEncoder: [[[XMLRPCDefaultEncoder alloc] init] autorelease]];
 #else
-    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
+    return [self initWithURL: URL withEncoder: [[XMLRPCDefaultEncoder alloc] init]];
 #endif
 }
 
@@ -59,6 +60,7 @@
 - (void)setEncoder:(id<XMLRPCEncoder>)encoder {
     NSString *method = [myXMLEncoder method];
     NSArray *parameters = [myXMLEncoder parameters];
+    
 #if ! __has_feature(objc_arc)
     [myXMLEncoder release];
     
@@ -107,8 +109,7 @@
 #pragma mark -
 
 - (NSURLRequest *)request {
-    NSData *content = [[self body] dataUsingEncoding: NSUTF8StringEncoding];
-    NSNumber *contentLength = [NSNumber numberWithInt: [content length]];
+    NSNumber *contentLength = [myXMLEncoder encodedLength];
     
     if (!myRequest) {
         return nil;
@@ -142,7 +143,11 @@
       }
     }
     
-    [myRequest setHTTPBody: content];
+    if ([myXMLEncoder isKindOfClass: [XMLRPCStreamingEncoder class]]) {
+        [myRequest setHTTPBodyStream: [myXMLEncoder encode]];
+    } else {
+        [myRequest setHTTPBody: [myXMLEncoder encode]];
+    }
     
     return (NSURLRequest *)myRequest;
 }

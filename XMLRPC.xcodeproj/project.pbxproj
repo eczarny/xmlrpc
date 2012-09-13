@@ -628,7 +628,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF0B0F67227F00B71B22 /* XMLRPCUnitTestsDevelopment.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,7 +641,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF0C0F67227F00B71B22 /* XMLRPCUnitTestsRelease.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +654,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF100F6722D600B71B22 /* XMLRPCDevelopment.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				VERSION_INFO_FILE = "";
 			};
@@ -666,7 +663,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0799AF110F6722D600B71B22 /* XMLRPCRelease.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				VERSION_INFO_FILE = "";
 			};
@@ -693,6 +689,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -709,6 +706,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;

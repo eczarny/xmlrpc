@@ -28,6 +28,12 @@ static NSOperationQueue *parsingQueue;
 
 #pragma mark -
 
+- (void)requestTimedOut;
+
+- (void)invalidateTimeout;
+
+#pragma mark -
+
 + (NSOperationQueue *)parsingQueue;
 
 @end
@@ -60,6 +66,8 @@ static NSOperationQueue *parsingQueue;
         
         if (myConnection) {
             NSLog(@"The connection, %@, has been established!", myIdentifier);
+
+            [self performSelector: @selector(requestTimedOut) withObject: nil afterDelay: [myRequest timeoutInterval]];
         } else {
             NSLog(@"The connection, %@, could not be established!", myIdentifier);
 #if ! __has_feature(objc_arc)
@@ -117,6 +125,8 @@ static NSOperationQueue *parsingQueue;
 
 - (void)cancel {
     [myConnection cancel];
+
+    [self invalidateTimeout];
 }
 
 #pragma mark -
@@ -174,9 +184,11 @@ static NSOperationQueue *parsingQueue;
 #else
     XMLRPCRequest *request = myRequest;
 #endif
-    
+
     NSLog(@"The connection, %@, failed with the following error: %@", myIdentifier, [error localizedDescription]);
-    
+
+    [self invalidateTimeout];
+
     [myDelegate request: request didFailWithError: error];
     
     [myManager closeConnectionForIdentifier: myIdentifier];
@@ -197,9 +209,11 @@ static NSOperationQueue *parsingQueue;
 }
 
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection {
+    [self invalidateTimeout];
+    
     if (myData && ([myData length] > 0)) {
         NSBlockOperation *parsingOperation;
-        
+
 #if ! __has_feature(objc_arc)
         parsingOperation = [NSBlockOperation blockOperationWithBlock:^{
             XMLRPCResponse *response = [[[XMLRPCResponse alloc] initWithData: myData] autorelease];
@@ -222,6 +236,19 @@ static NSOperationQueue *parsingQueue;
         
         [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
     }
+}
+
+#pragma mark -
+- (void)requestTimedOut {
+    NSURL *requestURL = [myRequest URL];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys: requestURL, NSURLErrorFailingURLErrorKey, [requestURL absoluteString], NSURLErrorFailingURLStringErrorKey,
+        @"The request timed out.", NSLocalizedDescriptionKey, nil];
+
+    [self connection: myConnection didFailWithError: [NSError errorWithDomain: NSURLErrorDomain code: NSURLErrorTimedOut userInfo: userInfo]];
+}
+
+- (void)invalidateTimeout {
+    [NSObject cancelPreviousPerformRequestsWithTarget: self selector: @selector(requestTimedOut) object:nil];
 }
 
 #pragma mark -

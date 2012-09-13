@@ -230,10 +230,12 @@
         [parser setDelegate: myParent];
 
         if (myParent) {
-            [myParent->myChildren removeObject: self];
+            XMLRPCEventBasedParserDelegate *parent = myParent;
             
             // Set it to nil explicitly since it's not __weak but __unsafe_unretained.
             myParent = nil;
+            
+            [parent->myChildren removeObject: self];
         }
     }
 }

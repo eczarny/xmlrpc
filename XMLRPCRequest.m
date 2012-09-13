@@ -3,6 +3,10 @@
 #import "XMLRPCDefaultEncoder.h"
 #import "XMLRPCStreamingEncoder.h"
 
+#define kDefaultTimeoutInterval 240;
+
+#pragma mark -
+
 @implementation XMLRPCRequest
 
 - (id)initWithURL: (NSURL *)URL withEncoder: (id<XMLRPCEncoder>)encoder {
@@ -18,6 +22,8 @@
 #if ! __has_feature(objc_arc)
         [myXMLEncoder retain];
 #endif
+
+        myTimeoutInterval = kDefaultTimeoutInterval;
     }
     
     return self;
@@ -90,6 +96,10 @@
     [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
+- (void)setTimeoutInterval: (NSTimeInterval)timeoutInterval {
+    myTimeoutInterval = timeoutInterval;
+}
+
 #pragma mark -
 
 - (NSString *)method {
@@ -98,6 +108,10 @@
 
 - (NSArray *)parameters {
     return [myXMLEncoder parameters];
+}
+
+- (NSTimeInterval)timeoutInterval {
+    return myTimeoutInterval;
 }
 
 #pragma mark -

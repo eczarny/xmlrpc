@@ -30,9 +30,9 @@
 
 - (id)initWithURL: (NSURL *)URL {
 #if ! __has_feature(objc_arc)
-    return [self initWithURL:URL withEncoder: [[[XMLRPCDefaultEncoder alloc] init] autorelease]];
+    return [self initWithURL: URL withEncoder: [[[XMLRPCDefaultEncoder alloc] init] autorelease]];
 #else
-    return [self initWithURL:URL withEncoder: [[XMLRPCDefaultEncoder alloc] init]];
+    return [self initWithURL: URL withEncoder: [[XMLRPCDefaultEncoder alloc] init]];
 #endif
 }
 

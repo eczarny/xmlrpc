@@ -20,7 +20,7 @@ typedef enum {
     XMLRPCEventBasedParserDelegate *myParent;
 #else
     // Without ARC this reference is effectively unretained so don't use strong reference here.
-    XMLRPCEventBasedParserDelegate * __unsafe_unretained myParent;
+    XMLRPCEventBasedParserDelegate __unsafe_unretained *myParent;
 #endif
     NSMutableSet *myChildren;
     XMLRPCElementType myElementType;

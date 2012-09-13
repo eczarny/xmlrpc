@@ -28,8 +28,9 @@ static NSOperationQueue *parsingQueue;
 
 #pragma mark -
 
-- (void)timeoutExpired;
-- (void)invalidateTimer;
+- (void)requestTimedOut;
+
+- (void)invalidateTimeout;
 
 #pragma mark -
 
@@ -66,7 +67,7 @@ static NSOperationQueue *parsingQueue;
         if (myConnection) {
             NSLog(@"The connection, %@, has been established!", myIdentifier);
 
-            [self performSelector:@selector(timeoutExpired) withObject:nil afterDelay:[myRequest timeout]];
+            [self performSelector: @selector(requestTimedOut) withObject: nil afterDelay: [myRequest timeoutInterval]];
         } else {
             NSLog(@"The connection, %@, could not be established!", myIdentifier);
 #if ! __has_feature(objc_arc)
@@ -125,7 +126,7 @@ static NSOperationQueue *parsingQueue;
 - (void)cancel {
     [myConnection cancel];
 
-    [self invalidateTimer];
+    [self invalidateTimeout];
 }
 
 #pragma mark -
@@ -186,7 +187,7 @@ static NSOperationQueue *parsingQueue;
 
     NSLog(@"The connection, %@, failed with the following error: %@", myIdentifier, [error localizedDescription]);
 
-    [self invalidateTimer];
+    [self invalidateTimeout];
 
     [myDelegate request: request didFailWithError: error];
     
@@ -208,7 +209,8 @@ static NSOperationQueue *parsingQueue;
 }
 
 - (void)connectionDidFinishLoading: (NSURLConnection *)connection {
-    [self invalidateTimer];
+    [self invalidateTimeout];
+    
     if (myData && ([myData length] > 0)) {
         NSBlockOperation *parsingOperation;
 
@@ -237,23 +239,16 @@ static NSOperationQueue *parsingQueue;
 }
 
 #pragma mark -
-- (void)timeoutExpired
-{
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [myRequest URL], NSURLErrorFailingURLErrorKey,
-                              [[myRequest URL] absoluteString], NSURLErrorFailingURLStringErrorKey,
-                              //TODO not good to use hardcoded value for localized description
-                              @"The request timed out.", NSLocalizedDescriptionKey,
-                              nil];
+- (void)requestTimedOut {
+    NSURL *requestURL = [myRequest URL];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys: requestURL, NSURLErrorFailingURLErrorKey, [requestURL absoluteString], NSURLErrorFailingURLStringErrorKey,
+        @"The request timed out.", NSLocalizedDescriptionKey, nil];
 
-    NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:userInfo];
-
-    [self connection:myConnection didFailWithError:error];
+    [self connection: myConnection didFailWithError: [NSError errorWithDomain: NSURLErrorDomain code: NSURLErrorTimedOut userInfo: userInfo]];
 }
 
-- (void)invalidateTimer
-{
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeoutExpired) object:nil];
+- (void)invalidateTimeout {
+    [NSObject cancelPreviousPerformRequestsWithTarget: self selector: @selector(requestTimedOut) object:nil];
 }
 
 #pragma mark -

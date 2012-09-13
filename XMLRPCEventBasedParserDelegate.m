@@ -231,13 +231,10 @@
 
         if (myParent) {
             XMLRPCEventBasedParserDelegate *parent = myParent;
-
+            
             // Set it to nil explicitly since it's not __weak but __unsafe_unretained.
-            // We're doing it here because if we'll do it after removal from myChildren
-            // self can already be deallocated, and accessing field of deallocated object
-            // causes memory corruption.
             myParent = nil;
-
+            
             [parent->myChildren removeObject: self];
         }
     }

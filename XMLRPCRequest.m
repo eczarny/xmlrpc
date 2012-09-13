@@ -2,7 +2,9 @@
 #import "XMLRPCEncoder.h"
 #import "XMLRPCDefaultEncoder.h"
 
-static const NSTimeInterval DEFAULT_TIMEOUT = 240;
+#define kDefaultTimeoutInterval 240;
+
+#pragma mark -
 
 @implementation XMLRPCRequest
 
@@ -20,7 +22,7 @@ static const NSTimeInterval DEFAULT_TIMEOUT = 240;
         [myXMLEncoder retain];
 #endif
 
-        myTimeout = DEFAULT_TIMEOUT;
+        myTimeoutInterval = kDefaultTimeoutInterval;
     }
     
     return self;
@@ -28,9 +30,9 @@ static const NSTimeInterval DEFAULT_TIMEOUT = 240;
 
 - (id)initWithURL: (NSURL *)URL {
 #if ! __has_feature(objc_arc)
-    return [self initWithURL:URL withEncoder:[[[XMLRPCDefaultEncoder alloc] init] autorelease]];
+    return [self initWithURL:URL withEncoder: [[[XMLRPCDefaultEncoder alloc] init] autorelease]];
 #else
-    return [self initWithURL:URL withEncoder:[[XMLRPCDefaultEncoder alloc] init]];
+    return [self initWithURL:URL withEncoder: [[XMLRPCDefaultEncoder alloc] init]];
 #endif
 }
 
@@ -92,9 +94,8 @@ static const NSTimeInterval DEFAULT_TIMEOUT = 240;
     [myXMLEncoder setMethod: method withParameters: parameters];
 }
 
-- (void)setTimeoutInterval: (NSTimeInterval)timeout
-{
-    myTimeout = timeout;
+- (void)setTimeoutInterval: (NSTimeInterval)timeoutInterval {
+    myTimeoutInterval = timeoutInterval;
 }
 
 #pragma mark -
@@ -107,9 +108,8 @@ static const NSTimeInterval DEFAULT_TIMEOUT = 240;
     return [myXMLEncoder parameters];
 }
 
-- (NSTimeInterval)timeout
-{
-    return myTimeout;
+- (NSTimeInterval)timeoutInterval {
+    return myTimeoutInterval;
 }
 
 #pragma mark -

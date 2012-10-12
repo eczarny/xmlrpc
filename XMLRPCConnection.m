@@ -229,12 +229,17 @@ static NSOperationQueue *parsingQueue;
             XMLRPCRequest *request = myRequest;
 
             [[NSOperationQueue mainQueue] addOperation: [NSBlockOperation blockOperationWithBlock:^{
-                [myDelegate request: request didReceiveResponse: response]; 
+                [myDelegate request: request didReceiveResponse: response];
+
+                [myManager closeConnectionForIdentifier:myIdentifier];
             }]];
         }];
 #endif
         
         [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
+    }
+    else {
+        [myManager closeConnectionForIdentifier:myIdentifier];
     }
 }
 

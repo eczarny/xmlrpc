@@ -229,7 +229,7 @@ static NSOperationQueue *parsingQueue;
             [[NSOperationQueue mainQueue] addOperation: [NSBlockOperation blockOperationWithBlock:^{
                 [myDelegate request: request didReceiveResponse: response];
 
-                [myManager closeConnectionForIdentifier:myIdentifier];
+                [myManager closeConnectionForIdentifier: myIdentifier];
             }]];
         }];
 #endif
@@ -237,7 +237,7 @@ static NSOperationQueue *parsingQueue;
         [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
     }
     else {
-        [myManager closeConnectionForIdentifier:myIdentifier];
+        [myManager closeConnectionForIdentifier: myIdentifier];
     }
 }
 

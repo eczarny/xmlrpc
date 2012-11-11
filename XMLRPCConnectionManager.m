@@ -43,10 +43,9 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 #pragma mark -
 
-+ (void)spawn:(NSString*)stringURL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate
++ (void)spawn:(NSURL*)URL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate
 {
-    DLog(@"%@ sent to %@", method, stringURL);
-    NSURL *URL = [NSURL URLWithString:stringURL];
+    DLog(@"%@ sent to %@", method, URL);
     XMLRPCRequest *request = [[[XMLRPCRequest alloc] initWithURL:URL] autorelease];
     XMLRPCConnectionManager *manager = [XMLRPCConnectionManager sharedManager];
     [request setMethod:method withParameter:params];

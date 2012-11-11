@@ -11,7 +11,7 @@
 
 #pragma mark -
 
-+ (void)spawn:(NSString*)stringURL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate;
++ (void)spawn:(NSURL*)URL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate;
 - (NSString *)spawnConnectionWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate;
 
 #pragma mark -

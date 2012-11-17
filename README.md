@@ -2,11 +2,9 @@
 
 The Cocoa XML-RPC Framework is a simple, and lightweight, XML-RPC client framework written in Objective-C.
 
-# Requirements
+## Retirement
 
-The Cocoa XML-RPC Framework has been built, and designed, for Mac OS X 10.5 or later. This release should provide basic iPhone and iPod touch support.
-
-This version of the Cocoa XML-RPC Framework includes a new event-based XML parser. The previous tree-based XML parser still exists, but is no longer the default XML-RPC response parser nor included in the Xcode build. This should hopefully provide better compatibility with the iPhone SDK.
+After roughly eight years of development the Cocoa XML-RPC Framework has officially entered retirement. The source code will remain available on GitHub, but I will no longer be actively maintaining the project.
 
 # Usage
 
@@ -65,12 +63,6 @@ There are situations where it may be desirable to invoke XML-RPC requests synchr
     + (XMLRPCResponse *)sendSynchronousXMLRPCRequest: (XMLRPCRequest *)request error: (NSError **)error;
 
 If there is a problem sending the XML-RPC request expect nil to be returned.
-
-# What if I find a bug, or what if I want to help?
-
-Please, contact me with any questions, comments, suggestions, or problems. I try to make the time to answer every request.
-
-Those wishing to contribute to the project should begin by obtaining the latest source with Git. The project is hosted on GitHub, making it easy for anyone to make contributions. Simply create a fork and make your changes.
 
 # Acknowledgments
 

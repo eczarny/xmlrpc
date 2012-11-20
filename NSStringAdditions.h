@@ -6,7 +6,7 @@
 
 #pragma mark -
 
-- (NSString *)gtm_stringByUnescapingFromHTML;
+- (NSString *)unescapedString;
 
 - (NSString *)escapedString;
 

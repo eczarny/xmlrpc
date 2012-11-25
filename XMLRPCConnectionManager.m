@@ -43,6 +43,15 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 #pragma mark -
 
++ (void)spawn:(NSURL*)URL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate
+{
+    DLog(@"%@ sent to %@", method, URL);
+    XMLRPCRequest *request = [[[XMLRPCRequest alloc] initWithURL:URL] autorelease];
+    XMLRPCConnectionManager *manager = [XMLRPCConnectionManager sharedManager];
+    [request setMethod:method withParameter:params];
+    [manager spawnConnectionWithXMLRPCRequest:request delegate:delegate];
+}
+
 - (NSString *)spawnConnectionWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate {
     XMLRPCConnection *newConnection = [[XMLRPCConnection alloc] initWithXMLRPCRequest: request delegate: delegate manager: self];
 #if ! __has_feature(objc_arc)
@@ -66,7 +75,7 @@ static XMLRPCConnectionManager *sharedInstance = nil;
     return [myConnections allKeys];
 }
 
-- (int)numberOfActiveConnections {
+- (NSUInteger)numberOfActiveConnections {
     return [myConnections count];
 }
 

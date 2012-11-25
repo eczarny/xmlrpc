@@ -65,7 +65,7 @@ static NSOperationQueue *parsingQueue;
 #endif
         
         if (myConnection) {
-            NSLog(@"The connection, %@, has been established!", myIdentifier);
+//            DLog(@"The connection, %@, has been established!", myIdentifier);
 
             [self performSelector: @selector(requestTimedOut) withObject: nil afterDelay: [myRequest timeoutInterval]];
         } else {
@@ -152,7 +152,7 @@ static NSOperationQueue *parsingQueue;
 
 - (void)connection: (NSURLConnection *)connection didReceiveResponse: (NSURLResponse *)response {
     if([response respondsToSelector: @selector(statusCode)]) {
-        int statusCode = [(NSHTTPURLResponse *)response statusCode];
+        NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
         
         if(statusCode >= 400) {
             NSError *error = [NSError errorWithDomain: @"HTTP" code: statusCode userInfo: nil];
@@ -229,12 +229,17 @@ static NSOperationQueue *parsingQueue;
             XMLRPCRequest *request = myRequest;
 
             [[NSOperationQueue mainQueue] addOperation: [NSBlockOperation blockOperationWithBlock:^{
-                [myDelegate request: request didReceiveResponse: response]; 
+                [myDelegate request: request didReceiveResponse: response];
+
+                [myManager closeConnectionForIdentifier:myIdentifier];
             }]];
         }];
 #endif
         
         [[XMLRPCConnection parsingQueue] addOperation: parsingOperation];
+    }
+    else {
+        [myManager closeConnectionForIdentifier:myIdentifier];
     }
 }
 

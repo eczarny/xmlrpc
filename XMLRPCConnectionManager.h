@@ -11,13 +11,14 @@
 
 #pragma mark -
 
++ (void)spawn:(NSURL*)URL method:(NSString*)method params:(NSArray*)params delegate: (id<XMLRPCConnectionDelegate>)delegate;
 - (NSString *)spawnConnectionWithXMLRPCRequest: (XMLRPCRequest *)request delegate: (id<XMLRPCConnectionDelegate>)delegate;
 
 #pragma mark -
 
 - (NSArray *)activeConnectionIdentifiers;
 
-- (int)numberOfActiveConnections;
+- (NSUInteger)numberOfActiveConnections;
 
 #pragma mark -
 

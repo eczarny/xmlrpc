@@ -55,7 +55,10 @@ static NSOperationQueue *parsingQueue;
 #endif
         myData = [[NSMutableData alloc] init];
         
-        myConnection = [[NSURLConnection alloc] initWithRequest: [request request] delegate: self];
+        myConnection = [[NSURLConnection alloc] initWithRequest: [request request] delegate: self startImmediately:NO];
+        [myConnection scheduleInRunLoop:[NSRunLoop mainRunLoop]
+                                forMode:NSDefaultRunLoopMode];
+        [myConnection start];
         
 #if ! __has_feature(objc_arc)
         myDelegate = [delegate retain];

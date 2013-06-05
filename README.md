@@ -2,6 +2,9 @@
 
 The Cocoa XML-RPC Framework is a simple, and lightweight, XML-RPC client framework written in Objective-C.
 
+[CocoaPods](http://cocoapods.org) podspec status
+![CocoaPods podspec status](http://cocoapod-badges.herokuapp.com/v/xmlrpc/badge.png)
+
 # Requirements
 
 The Cocoa XML-RPC Framework has been built, and designed, for Mac OS X 10.5 or later. This release should provide basic iPhone and iPod touch support.

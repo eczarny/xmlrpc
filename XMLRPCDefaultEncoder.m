@@ -154,7 +154,7 @@
 #if ! __has_feature(objc_arc)
     } else if (((CFBooleanRef)object == kCFBooleanTrue) || ((CFBooleanRef)object == kCFBooleanFalse)) {
 #else
-    } else if (((__bridge_retained CFBooleanRef)object == kCFBooleanTrue) || ((__bridge_retained CFBooleanRef)object == kCFBooleanFalse)) {
+    } else if (((__bridge CFBooleanRef)object == kCFBooleanTrue) || ((__bridge CFBooleanRef)object == kCFBooleanFalse)) {
 #endif
         return [self encodeBoolean: (CFBooleanRef)object];
     } else if ([object isKindOfClass: [NSNumber class]]) {

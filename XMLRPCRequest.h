@@ -54,4 +54,9 @@
 
 - (void)setValue: (NSString *)value forHTTPHeaderField: (NSString *)header;
 
+#pragma mark -
+    
+- (id) extra;
+- (void) setExtra:(id) extraObject;
+
 @end

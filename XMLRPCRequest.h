@@ -6,6 +6,8 @@
     NSMutableURLRequest *myRequest;
     id<XMLRPCEncoder> myXMLEncoder;
     NSTimeInterval myTimeout;
+    
+    id extra;
 }
 
 - (id)initWithURL: (NSURL *)URL;

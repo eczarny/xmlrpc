@@ -166,6 +166,20 @@ static const NSTimeInterval DEFAULT_TIMEOUT = 240;
 - (void)setValue: (NSString *)value forHTTPHeaderField: (NSString *)header {
     [myRequest setValue: value forHTTPHeaderField: header];
 }
+#pragma mark -
+
+- (id) extra {
+    return extra;
+}
+
+- (void) setExtra:(id) extraObject {
+#if ! __has_feature(objc_arc)
+    [extra release];
+    extra = [extraObject retain];
+#else
+    extra = extraObject;
+#endif
+}
 
 #pragma mark -
 

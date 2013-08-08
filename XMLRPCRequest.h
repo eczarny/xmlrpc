@@ -6,6 +6,8 @@
     NSMutableURLRequest *myRequest;
     id<XMLRPCEncoder> myXMLEncoder;
     NSTimeInterval myTimeout;
+    
+    id extra;
 }
 
 - (id)initWithURL: (NSURL *)URL;
@@ -53,5 +55,10 @@
 #pragma mark -
 
 - (void)setValue: (NSString *)value forHTTPHeaderField: (NSString *)header;
+
+#pragma mark -
+    
+- (id) extra;
+- (void) setExtra:(id) extraObject;
 
 @end

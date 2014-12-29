@@ -351,6 +351,10 @@
     }
     
     if (!result) {
+        result = [self parseDateString: value withFormat: @"yyyy'-'MM'-'dd'T'HH:mm:ssZ"];
+    }
+    
+    if (!result) {
         result = (NSDate *)[NSNull null];
     }
 

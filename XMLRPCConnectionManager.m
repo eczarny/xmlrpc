@@ -66,8 +66,8 @@ static XMLRPCConnectionManager *sharedInstance = nil;
     return [myConnections allKeys];
 }
 
-- (int)numberOfActiveConnections {
-    return (int)[myConnections count];
+- (NSUInteger)numberOfActiveConnections {
+    return [myConnections count];
 }
 
 #pragma mark -

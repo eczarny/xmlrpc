@@ -96,11 +96,6 @@ static XMLRPCConnectionManager *sharedInstance = nil;
 
 #pragma mark -
 
-- (void)finalize {
-    [self closeConnections];
-    
-    [super finalize];
-}
 
 #pragma mark -
 

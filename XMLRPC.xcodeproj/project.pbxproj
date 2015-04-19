@@ -409,7 +409,7 @@
 			name = XMLRPCUnitTests;
 			productName = XMLRPCUnitTests;
 			productReference = 0799AF030F6721FF00B71B22 /* XMLRPCUnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		8DC2EF4F0486A6940098B216 /* XMLRPC */ = {
 			isa = PBXNativeTarget;
